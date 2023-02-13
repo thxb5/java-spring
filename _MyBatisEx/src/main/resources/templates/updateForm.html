@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="/update" method="post" th:each="emp : ${ elst }">
+	사번<input type="text" name="empno" th:value="${emp.empno}" readonly><br>
+	이름<input type="text" name="ename" th:value="${emp.ename}"><br>
+	직무<input type="text" name="job" th:value="${emp.job}"><br>
+	급여<input type="text" name="sal" th:value="${emp.sal}"><br>
+	<input type="submit">
+</form>
+</body>
+</html>
