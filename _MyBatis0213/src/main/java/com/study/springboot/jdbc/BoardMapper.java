@@ -7,5 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface BoardMapper {
 	
-	public List<Board> findAll();
+	public List<Board> findAll(String ee);
+	
+	public String insert(String bb);
 }

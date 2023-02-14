@@ -5,5 +5,13 @@
 <mapper namespace="com.study.springboot.jdbc.BoardMapper">
 	<select id="findAll" resultType="com.study.springboot.jdbc.Board">
 		select * from board
+		<where>
+			<if test="writer != null">
+				writer like '%${writer}%'
+			</if>
+		</where>
+	</select>
+	<select id="insert" resultType="com.study.springboot.jdbc.Board">
+		insert into board(writer, title, content) values (#{writer}, #{title}, #{content})
 	</select>
 </mapper>

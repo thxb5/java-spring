@@ -3,7 +3,6 @@ package com.study.springboot;
 
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ class MyBatis0213ApplicationTests {
 	@Test
 	@DisplayName("findAll test")
 	void testFindAll() {
-		List<Board> list = boardMapper.findAll();
+		List<Board> list = boardMapper.findAll("홍");
 		log.info(list);
 	}
 	
