@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+.main_header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header_icon {
+    display: flex;
+    height: 56px;
+    align-items: center;
+    justify-content:space-between;
+    width: 70%;
+}
+
+.modal {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background: black;
+    color: white;
+    display: none;
+    top: 21px;
+    left: 926px;
+}
+.modal_content{
+    height: 267px;
+}
+
+.modal_close{
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+
+}
+.modal_login {
+    width: 80%;
+    display: flex;
+}
+
+
+</style>
+
+<body>
+
+    <!--headerFragment 선언-->
+    <div th:fragment="headerFragment" class="main_header">
+        <div class="header">
+            <div class="header_icon">
+                <div>
+                    <a id="main_btn" href="/">홈</a>
+                </div>
+                <div>
+                    <input type="text">
+                    <input type="button" value="검색">
+                </div>
+                <div class="mybtn">
+                    <a id="login_btn">로그인</a>
+                    <a href="/join">회원가입</a>
+                    <a >마이페이지</a>
+                    <a >장바구니</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal_main">
+            <div class="modal_content">
+                <form class="modal_login" action="/login" method="post">
+                    <div class="login_input">
+                        <input type="text" name="id">
+                        <input type="text" name="pw">
+                    </div>
+                    <div class="login_submit">
+                        <input type="submit" value="로그인">
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal_close">
+                <input type="button" value="닫기" id="modal_closebtn">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        console.log("버튼");
+        $("#login_btn").click(function(){
+           $(".modal").fadeIn();
+        });
+
+        $("#modal_closebtn").click(function(){
+           $(".modal").fadeOut();
+        })
+    })
+
+</script>
+</html>

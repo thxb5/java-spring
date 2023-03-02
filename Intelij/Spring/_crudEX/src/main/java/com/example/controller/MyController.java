@@ -52,7 +52,6 @@ public class MyController {
 
 	@PostMapping("/insert")
 	public String insert(@RequestParam(value="title") String title, @RequestParam(value="content") String content, @RequestParam(value="kategorie") Long kategorie) {
-		Movie newMovie = new Movie();
 
 		//movieListRepository.save(Movie.builder().title(title).content(content).kategorie(kategorie).build());
 		return "view/manage";

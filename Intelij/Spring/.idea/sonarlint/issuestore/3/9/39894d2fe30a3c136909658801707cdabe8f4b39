@@ -1,0 +1,17 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(œ•é‹
+N	java:S106$"9Replace this use of System.out or System.err by a logger.(œ•é‹
+V	java:S125#"<This block of commented-out lines of code should be removed.(êýÀŠÿÿÿÿÿ
+G
+java:S1602&",Remove useless curly braces around statement(óÜÿÿÿÿÿ
+S	java:S106'"9Replace this use of System.out or System.err by a logger.(´‹¹öþÿÿÿÿ
+V	java:S1258"<This block of commented-out lines of code should be removed.(ä¯ú•ÿÿÿÿÿ
+G
+java:S1602;",Remove useless curly braces around statement(˜˜‰÷üÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(¤¸¤ûÿÿÿÿ
+B
+java:S1602C",Remove useless curly braces around statement(ØþìÍ
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(ÿþ«Ä
+B
+java:S1602K",Remove useless curly braces around statement(ÞÇ¸à
+S	java:S106L"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ
