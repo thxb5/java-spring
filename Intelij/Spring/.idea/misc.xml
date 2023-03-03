@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/_crudEX" />
     <file type="web" url="file://$PROJECT_DIR$/_Project" />
     <file type="web" url="file://$PROJECT_DIR$/_sb0302" />
+    <file type="web" url="file://$PROJECT_DIR$/hello-spring" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
