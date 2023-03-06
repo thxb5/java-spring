@@ -5,7 +5,7 @@ layout:decorate="~{layout/basic.html}">
 
 <div layout:fragment="content">
     <ul th:each="aa : ${list}">
-        <li>idx=[[${aa.idx}]],title=[[${aa.title}]]</li>
+        <li>[[${}]]</li>
     </ul>
 </div>
 

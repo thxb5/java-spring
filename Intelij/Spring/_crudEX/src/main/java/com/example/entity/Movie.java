@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
+@Builder
 @Entity
 @Setter
 @Getter
@@ -17,6 +18,7 @@ public class Movie {
     private Long movieId;
     private String movieTitle;
     private String movieContent;
+    private int movieKategorie;
 
 //    @Column(name = "genre")
 //    @ManyToOne(fetch = FetchType.LAZY)

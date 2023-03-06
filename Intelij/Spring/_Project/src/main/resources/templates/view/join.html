@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header"></head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" ></script>
+</head>
 <style>
 .body{
     height: 300px;
@@ -20,24 +22,110 @@
     <div class="body">
         <div class="content">
             <div>
-                <form class="join_form" action="/join" method="post">
+                <form class="join_form" action="/joinUser" method="post">
                     <div>
-                        이름<br/>
                         아이디<br/>
                         비밀번호<br/>
+                        닉네임<br/>
                         이메일<br/>
-                        <input type="submit" value="회원 가입하기">
+                        <input type="submit" value="회원 가입하기" onclick="return checkID()">
                     </div>
                     <div>
-                        <input type="text" name="name"><br/>
-                        <input type="text" name="id"><br/>
-                        <input type="text" name="pw"><br/>
-                        <input type="text" name="email">
+                        <input type="text" name="userId" id="user_id" placeholder="아이디를 입력해주세요."><br/>
+                        <input type="text" name="userPw" id="userpw" placeholder="비밀번호를 입력해주세요."><br/>
+                        <input type="text" name="userNickname" id="usernickname" placeholder="닉네임을 입력해주세요."><br/>
+                        <input type="text" name="userEmail" id="useremail" placeholder="이메일을 입력해주세요.">
                     </div>
-
+                    <div>
+                        <input type="button" value="중복체크" onclick="idCheck()">
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </body>
+
+<script>
+    var id_checkValue;
+    var userid;
+    var userpw;
+    var usernickname;
+    var useremail;
+    var flag = false;
+
+    //아이디 중복체크
+    function idCheck() {
+        id_checkValue = $('#user_id').val();
+        console.log(id_checkValue);
+        $.ajax({
+            url:"joincheck.do",
+            type:"post",
+            data:{"userid":id_checkValue},
+            success: loca,
+            error: function() {
+                alert('error')
+            }
+        })
+    }
+
+    //아이디 중복체크2
+    function loca(data) {
+        console.log(data);
+         if(id_checkValue == "") {
+             alert('아이디를 입력해주세요.')
+            return;
+         }
+        if(data==0) {
+            alert('사용가능한 아이디 입니다.');
+            flag = true;
+        } else {
+            alert('다른 아이디를 입력해주세요.');
+        }
+    }
+
+    //정보 유효성검사
+    function checkID() {
+        userid = $('#user_id').val();
+        userpw = $('#userpw').val();
+        usernickname = $('#usernickname').val();
+        useremail = $('#useremail').val();
+        const emailCK = useremail;
+
+        if(userid == "") {
+            alert("아이디를 입력해주세요.");
+            $('#user_id').focus();
+            return false;
+        }
+        if(userpw == "") {
+            alert("비밀번호를 입력해주세요.");
+            $('#userpw').focus();
+            return false;
+        }
+        if(usernickname == "") {
+            alert("닉네임을 입력해주세요.");
+            $('#usernickname').focus();
+            return false;
+        }
+        if(useremail == "") {
+            alert("이메일을 입력해주세요.");
+            $('#useremail').focus();
+            return false;
+        } else if(emailCK.includes('@')) {
+
+        } else {
+            alert("이메일 형식(@)으로 입력해주세요.");
+            $('#useremail').focus();
+            return false;
+        }
+        if(flag == false) {
+            alert("중복체크를 완료해주세요.");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+
+</script>
 </html>

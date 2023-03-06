@@ -1,8 +1,6 @@
 package com.example.controller;
 
-
 import com.example.entity.Movie;
-import com.example.repository.MovieCategoryRepository;
 import com.example.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -19,13 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Log4j2
 public class MyController {
 	@Autowired
-	private final MovieCategoryRepository movieCategoryRepository;
-	@Autowired
 	private final MovieRepository movieRepository;
 	@GetMapping("/")
 	public String root() {
-		//List<MovieList> list = movieListRepository.findAll();
-		//model.addAttribute(list);
 		return "view/index";
 	}
 	
@@ -44,16 +38,11 @@ public class MyController {
 		return "view/insert";
 	}
 
-//	@PostMapping("/insert")
-//	public String insert(Movie movie, int type) {
-//		int idx
-//		return "view/manage";
-//	}
 
 	@PostMapping("/insert")
-	public String insert(@RequestParam(value="title") String title, @RequestParam(value="content") String content, @RequestParam(value="kategorie") Long kategorie) {
+	public String insert(@RequestParam(value="title") String title, @RequestParam(value="content") String content, @RequestParam(value="kategorie") int kategorie) {
 
-		//movieListRepository.save(Movie.builder().title(title).content(content).kategorie(kategorie).build());
+		movieRepository.save(Movie.builder().movieTitle(title).movieContent(content).movieKategorie(kategorie).build());
 		return "view/manage";
 	}
 

@@ -2,16 +2,18 @@ package com.example.study.controller;
 
 import com.example.study.entity.User;
 import com.example.study.repository.UserRepository;
+import com.example.study.service.UserServiceImpl;
+import groovy.util.logging.Log4j2;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
 @RequiredArgsConstructor
 @Controller
 public class MyController {
-    @Autowired
+
+    private final UserServiceImpl userServiceImpl;
     private final UserRepository userRepository;
 
     @GetMapping("/")
@@ -29,10 +31,17 @@ public class MyController {
         return "view/join";
     }
 
-    @PostMapping("/join")
-        public String join(@RequestParam(value = "name") String name, @RequestParam(value = "id") String id, @RequestParam(value = "pw") String pw, @RequestParam(value = "email") String email){
-            userRepository.save(User.builder().user_name(name).user_id(id).user_pw(pw).user_email(email).build());
+    //회원가입
+    @PostMapping("/joinUser")
+        public String join(@RequestParam(value = "userNickname") String userNickname, @RequestParam(value = "userId") String userId, @RequestParam(value = "userPw") String userPw, @RequestParam(value = "userEmail") String userEmail){
+            userRepository.save(User.builder().userId(userId).userPw(userPw).userNickname(userNickname).userEmail(userEmail).build());
         return "redirect:/";
     }
 
+    //가입시 아이디 중복체크
+    @PostMapping("joincheck.do")
+    public @ResponseBody int joincheck3(@RequestParam("userid")String userid) {
+        int result = userServiceImpl.joinCheck2(userid);
+        return result;
+    }
 }

@@ -1,0 +1,7 @@
+
+{
+java:S1488,"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8…õ‚¶ë0
+Y
+java:S1128"7Remove this unused import 'groovy.util.logging.Log4j2'.(æÂäĞûÿÿÿÿ8˜ùµë0
+[
+java:S1128	"9Remove this unused import 'org.springframework.ui.Model'.(ê†ıÿÿÿÿ8˜ùµë0
