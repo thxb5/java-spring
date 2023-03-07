@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments/header">
-    <script src="https://code.jquery.com/jquery-3.6.3.js" ></script>
-</head>
+<head th:replace="fragments/header"></head>
 <style>
 .body{
     height: 300px;
@@ -45,7 +43,7 @@
     </div>
 </body>
 
-<script>
+<script th:inline="javascript">
     var id_checkValue;
     var userid;
     var userpw;
@@ -70,7 +68,6 @@
 
     //아이디 중복체크2
     function loca(data) {
-        console.log(data);
          if(id_checkValue == "") {
              alert('아이디를 입력해주세요.')
             return;
@@ -121,6 +118,7 @@
             alert("중복체크를 완료해주세요.");
             return false;
         } else {
+            alert("회원가입 성공!")
             return true;
         }
     }

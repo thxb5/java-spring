@@ -15,5 +15,8 @@ public interface UserRepository extends JpaRepository<User, String> {
     @Query(value = "select count(*) from user where user_id = :userid", nativeQuery = true)
     int joinCheck(@Param("userid") String userid);
 
+    @Transactional
+    @Query(value = "select * from user where user_id = :userId and user_pw = :userPw", nativeQuery = true)
+    User loginCheck(@Param("userId") String userId, @Param("userPw") String userPw);
 
 }

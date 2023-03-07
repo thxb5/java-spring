@@ -31,14 +31,15 @@
     position: absolute;
     width: 400px;
     height: 300px;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
+    border: 1px solid black;
     display: none;
     top: 21px;
     left: 926px;
 }
 .modal_content{
-    height: 267px;
+    height: 224px;
 }
 
 .modal_close{
@@ -47,10 +48,76 @@
     margin-right: 10px;
 
 }
-.modal_login {
-    width: 80%;
+.myBtn {
     display: flex;
 }
+
+#modal_closebtn {
+    height: 42px;
+    width: 70px;
+}
+
+.modal_login {
+    width: 80%;
+}
+
+.login_title {
+    margin-left: 10px;
+}
+
+.login_input {
+    height: 100px;
+    margin-left: 10px;
+}
+
+.login_input > input {
+    height: 40px;
+    width: 250px;
+    border: 1px solid #cdcbcb;
+}
+
+.login_input > input:nth-child(2) {
+    border-top: none;
+}
+
+
+.myBtn {
+    display:flex;
+}
+
+.myBtn > div {
+    margin-left: 10px;
+}
+
+.login_submit {
+    padding-left: 10px;
+}
+
+.login_submit > input {
+    height: 87px;
+    width: 107px;
+    border: #df307f 1px solid;
+    background-color: #df307f;
+    color: white;
+    font-size: 20px;
+}
+
+.joinBtn {
+    padding-left: 10px;
+}
+
+.joinBtn > a {
+    width: 100px;
+    height: 36px;
+}
+
+.LG_btn {
+    display: flex;
+}
+
+/* 버튼 css */
+
+
 
 
 </style>
@@ -68,11 +135,22 @@
                     <input type="text">
                     <input type="button" value="검색">
                 </div>
-                <div class="mybtn">
-                    <a id="login_btn">로그인</a>
-                    <a href="/join">회원가입</a>
-                    <a >마이페이지</a>
-                    <a >장바구니</a>
+                <div class="myBtn">
+                    <div th:if="${user == null}" id="loginBtn" class="btn btn-1">
+                        <a id="login_btn">로그인</a>
+                    </div>
+                    <div th:if="${user != null}" id="logoutBtn" class="btn btn-1">
+                        <a href="logout.do">로그아웃</a>
+                    </div>
+                    <div th:if="${user == null}" class="btn btn-1">
+                        <a href="/join">회원가입</a>
+                    </div>
+                    <div class="btn btn-1">
+                        <a >마이페이지</a>
+                    </div>
+                    <div class="btn btn-1">
+                        <a >장바구니</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,13 +158,22 @@
     <div class="modal">
         <div class="modal_main">
             <div class="modal_content">
-                <form class="modal_login" action="/login" method="post">
-                    <div class="login_input">
-                        <input type="text" name="id">
-                        <input type="text" name="pw">
+                <form class="modal_login">
+                    <div class="login_title">
+                        <h1>회원 로그인</h1>
                     </div>
-                    <div class="login_submit">
-                        <input type="submit" value="로그인">
+                    <div class="LG_btn">
+                        <div class="login_input">
+                            <input type="text" name="userId" id="insertId" placeholder="아이디를 입력해주세요.">
+                            <input type="text" name="userPw" id="insertPw" placeholder="비밀번호를 입력해주세요.">
+                        </div>
+                        <div class="login_submit">
+                            <input id="login" type="button" value="로그인" onclick="idCheck()">
+                        </div>
+                    </div>
+                    <div class="joinBtn">
+
+                        <a href="/join">간편 회원가입</a>
                     </div>
                 </form>
             </div>
@@ -99,9 +186,13 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
+<script th:inline="javascript">
+    var idValue;
+    var pwValue;
+    // /*<![CDATA[*/ /*]]>*/
+    // var idCK = /*[[ ${idCK} ]]*/
+
     $(function(){
-        console.log("버튼");
         $("#login_btn").click(function(){
            $(".modal").fadeIn();
         });
@@ -110,6 +201,50 @@
            $(".modal").fadeOut();
         })
     })
+
+
+    //로그인 버튼 클릭시 메소드
+    function idCheck() {
+        idValue = $('#insertId').val();
+        pwValue = $('#insertPw').val();
+
+
+        if(idValue == ""){
+            alert("아이디를 입력해주세요.")
+            $('#insertId').focus();
+            return false;
+        } else if(pwValue == "") {
+            alert("비밀번호를 입력해주세요.")
+            $('#insertPw').focus();
+            return false;
+        } else {
+            $.ajax({
+                url:"logincheck.do",
+                type:"post",
+                data:{"userId":idValue, "userPw":pwValue},
+                success: loca,
+                error: function() {
+                    alert('error')
+                }
+            })
+        }
+        function loca(data) {
+            if(data == null) {
+                alert("아이디 또는 비밀번호를 확인해주세요.")
+                return false;
+            } else {
+               $(function(){
+                   window.location.reload();
+               })
+               alert("로그인 성공")
+            }
+        }
+    }
+
+
+
+
+
 
 </script>
 </html>

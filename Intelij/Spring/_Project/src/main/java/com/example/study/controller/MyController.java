@@ -3,11 +3,12 @@ package com.example.study.controller;
 import com.example.study.entity.User;
 import com.example.study.repository.UserRepository;
 import com.example.study.service.UserServiceImpl;
-import groovy.util.logging.Log4j2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller
@@ -16,16 +17,35 @@ public class MyController {
     private final UserServiceImpl userServiceImpl;
     private final UserRepository userRepository;
 
+    //채널 메인
     @GetMapping("/")
-    public String header(){
+    public String header(HttpSession session, Model model){
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
         return "view/main";
     }
 
-    @PostMapping("/login")
-    public  String login() {
+    //로그인 처리
+    @PostMapping("logincheck.do")
+    @ResponseBody
+    public User logincheck(@RequestParam("userId")String userId, @RequestParam("userPw")String userPw, HttpSession session) {
+        User user = userServiceImpl.loginCheck2(userId,userPw);
+        if(user!=null) {
+            session.setAttribute("user", user);
+            session.setMaxInactiveInterval(60 * 10);
+        }
+        return user;
+    }
+
+
+    //로그아웃 처리
+    @RequestMapping("logout.do")
+    public String logout(HttpSession session) {
+        session.setAttribute("user",null);
         return "redirect:/";
     }
 
+    //회원가입 페이지
     @GetMapping("/join")
     public String joinPage() {
         return "view/join";
