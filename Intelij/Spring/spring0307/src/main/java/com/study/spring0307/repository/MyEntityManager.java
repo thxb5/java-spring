@@ -1,6 +1,8 @@
 package com.study.spring0307.repository;
 
+import com.study.spring0307.entity.Cart;
 import com.study.spring0307.entity.Person;
+import com.study.spring0307.entity.Product;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,7 +34,7 @@ public class MyEntityManager {
 //        Person person = em.find(Person.class, 1L);
 //        person.setAddr("성남");
         /* manage 영속성 부분에 find로 select한 다음에 set을 해주면 자동으로 flush DB해준다,, */
-        /* 영속성으로 값을 가져오와서 수정,삭제 등을 해주는 개념,, */
+        /* 영속성으로 값을 가져와서 수정,삭제 등을 해주는 개념,, */
 
         Person person = Person.builder().id(2L).name("가나다").addr("수원").build();
         em.merge(person);
@@ -57,4 +59,26 @@ public class MyEntityManager {
         return "삭제";
     }
 
-}
+    @Transactional
+    public String putInCart() {
+        Cart cart = Cart.builder().build();
+        em.persist(cart);
+        log.info("===>카트생성?"+em.contains(cart));
+        IntStream.rangeClosed(1, 5).forEach(t->{
+            Product product = Product.builder().cart(cart).name("물건"+t).price(2000+t*10).build();
+            em.persist(product);
+            log.info("===>물건넣기?"+em.contains(product));
+        });
+        return "생성";
+    }
+
+    public Cart getCart() {
+        Cart cart = em.find(Cart.class, 1L);
+        return cart;
+    }
+
+    public Cart getCart2(Long id) {
+        return em.find(Cart.class, id);
+    }
+
+}//Class

@@ -37,7 +37,6 @@ public class MyController {
         return user;
     }
 
-
     //로그아웃 처리
     @RequestMapping("logout.do")
     public String logout(HttpSession session) {
@@ -63,5 +62,11 @@ public class MyController {
     public @ResponseBody int joincheck3(@RequestParam("userid")String userid) {
         int result = userServiceImpl.joinCheck2(userid);
         return result;
+    }
+
+    //마이페이지
+    @GetMapping("/mypage")
+    public String mypage() {
+        return "view/mypage";
     }
 }

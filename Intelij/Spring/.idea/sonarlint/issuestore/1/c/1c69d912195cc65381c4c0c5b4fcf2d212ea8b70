@@ -1,4 +1,6 @@
 
-X	java:S125 "<This block of commented-out lines of code should be removed.(€ÃêÃ8ç‡åÓë0
-X	java:S1251"<This block of commented-out lines of code should be removed.(€ÃêÃ8é‡åÓë0
-U	java:S1067"9Replace this use of System.out or System.err by a logger.(ŞÓêÊ8é‡åÓë0
+~
+java:S1488L"\Immediately return this expression instead of assigning it to the temporary variable "cart".(‰šáÌùÿÿÿÿ8ëç˜øë0
+X	java:S125""<This block of commented-out lines of code should be removed.(€ÃêÃ8Ê—øë0
+X	java:S1253"<This block of commented-out lines of code should be removed.(€ÃêÃ8ƒÊ—øë0
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(ŞÓêÊ8„Ê—øë0

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -50,6 +51,16 @@
 }
 .myBtn {
     display: flex;
+}
+
+#logoImage{
+    width: 114px;
+    height: 33px;
+}
+
+#logoImage > img {
+    width: 114px;
+    height: 33px;
 }
 
 #modal_closebtn {
@@ -117,39 +128,55 @@
 
 /* 버튼 css */
 
+.btnList {
 
+}
 
 
 </style>
 
 <body>
-
     <!--headerFragment 선언-->
     <div th:fragment="headerFragment" class="main_header">
         <div class="header">
             <div class="header_icon">
                 <div>
-                    <a id="main_btn" href="/">홈</a>
+                    <a class="link-secondary" id="logoImage" href="/"><img src="images/carrotLogo.png" alt="로고"></a>
+                </div>
+                <div class="btnList">
+                    <a>중고거래</a>
+                </div>
+                <div class="btnList">
+                    <a>동네가게</a>
+                </div>
+                <div class="btnList">
+                    <a>알바</a>
+                </div>
+                <div class="btnList">
+                    <a>부동산 직거래</a>
+                </div>
+                <div class="btnList">
+                    <a>자동차 직거래</a>
                 </div>
                 <div>
                     <input type="text">
                     <input type="button" value="검색">
                 </div>
                 <div class="myBtn">
-                    <div th:if="${user == null}" id="loginBtn" class="btn btn-1">
+                    <div th:if="${user == null}" id="loginBtn">
                         <a id="login_btn">로그인</a>
                     </div>
-                    <div th:if="${user != null}" id="logoutBtn" class="btn btn-1">
+                    <div th:if="${user != null}" id="logoutBtn" >
                         <a href="logout.do">로그아웃</a>
                     </div>
-                    <div th:if="${user == null}" class="btn btn-1">
+                    <div th:if="${user == null}">
                         <a href="/join">회원가입</a>
                     </div>
-                    <div class="btn btn-1">
-                        <a >마이페이지</a>
+                    <div >
+                        <a href="/mypage">마이페이지</a>
                     </div>
-                    <div class="btn btn-1">
-                        <a >장바구니</a>
+                    <div >
+                        <a >찜목록</a>
                     </div>
                 </div>
             </div>

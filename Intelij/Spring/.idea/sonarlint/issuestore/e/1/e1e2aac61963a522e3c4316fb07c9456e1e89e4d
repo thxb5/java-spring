@@ -1,9 +1,16 @@
 
 x
-java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "str".(Èö—8¸‡åÓë0
+java:S1488!"[Immediately return this expression instead of assigning it to the temporary variable "str".(Èö—8Öÿ³øë0
 w
-java:S1488"ZImmediately return this expression instead of assigning it to the temporary variable "aa".(ğª‚û8¹‡åÓë0
+java:S1488("ZImmediately return this expression instead of assigning it to the temporary variable "aa".(ğª‚û8Öÿ³øë0
 y
-java:S1488""\Immediately return this expression instead of assigning it to the temporary variable "list".(Â¥ÁŞ8¹‡åÓë0
+java:S1488/"\Immediately return this expression instead of assigning it to the temporary variable "list".(Â¥ÁŞ8Öÿ³øë0
 }
-java:S1488)"[Immediately return this expression instead of assigning it to the temporary variable "str".(À²üÁÿÿÿÿÿ8¹‡åÓë0
+java:S14886"[Immediately return this expression instead of assigning it to the temporary variable "str".(À²üÁÿÿÿÿÿ8Öÿ³øë0
+}
+java:S1488="[Immediately return this expression instead of assigning it to the temporary variable "str".(·««„ıÿÿÿÿ8Öÿ³øë0
+y
+java:S1488D"\Immediately return this expression instead of assigning it to the temporary variable "cart".(Í©ññ8Öÿ³øë0
+X	java:S125J"<This block of commented-out lines of code should be removed.(õÅ…¾8äÿ³øë0
+T	java:S106V"9Replace this use of System.out or System.err by a logger.(¥ôÄ8åÿ³øë0
+Z	java:S106^"9Replace this use of System.out or System.err by a logger.(´¾Ó²şÿÿÿÿ8åÿ³øë0
