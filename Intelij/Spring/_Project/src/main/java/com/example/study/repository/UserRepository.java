@@ -19,4 +19,13 @@ public interface UserRepository extends JpaRepository<User, String> {
     @Query(value = "select * from user where user_id = :userId and user_pw = :userPw", nativeQuery = true)
     User loginCheck(@Param("userId") String userId, @Param("userPw") String userPw);
 
+    @Transactional
+    @Query(value = "select * from user where user_id = :#{#user.userId}", nativeQuery = true)
+    User userInfo(User user);
+
+    @Transactional
+    @Query(value = "update user set user_pw = :#{#user.userPw}, user_nickname = :#{#user.userNickname}, user_email = :#{#user.userEmail} where user_id = :#{#user.userId}", nativeQuery = true)
+    void userUpdate(User user);
+
+
 }

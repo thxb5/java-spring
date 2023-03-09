@@ -4,7 +4,78 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<style>
+.aside {
+    width: 10vw;
+    height: 90vh;
+    background: #e5d8ba;
+}
 
+.aside > ul {
+    list-style-type: none;
+}
+
+.aside-top {
+    height: 90px;
+    padding-left: 17px;
+    background: white;
+    margin: 0;
+    border: 1px solid #cac8c8;
+}
+
+.aside-title1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.aside-title2 {
+    font-size: 22px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.aside-account {
+    height: 180px;
+    margin: 0;
+    padding-top: 6px;
+    padding-left: 10px;
+    border-bottom: 1px solid #a49e9e;
+}
+
+.aside-account > li {
+    padding-left: 18px;
+    font-size: 14px;
+    margin: 9px;
+}
+
+.account-title >span {
+    padding-left: 5px;
+    font-size: 17px;
+}
+
+.fa-cog:before {
+    font-size: 17px;
+}
+
+</style>
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<body>
+    <div class="aside">
+        <ul class="aside-top">
+            <li class="aside-title1">Mypage</li>
+            <li class="aside-title2">마이페이지</li>
+        </ul>
+        <ul class="aside-account">
+            <div class="account-title"><i class="fa fa-cog" aria-hidden="true"></i><span>회원정보관리</span></div>
+            <li><a href="/myAccount">개인정보 수정</a></li>
+            <li>개시글 관리</li>
+            <li>댓글 관리</li>
+            <li>마이리뷰 관리</li>
+            <li>회원 탈퇴</li>
+        </ul>
+        <ul>
+
+        </ul>
+    </div>
 </body>
 </html>

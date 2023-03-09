@@ -1,5 +1,9 @@
 
 {
-java:S1488?"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8öì‚ì0
+java:S1488D"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8áÖË°ì0
 \
-java:S2441"":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8˜öì‚ì0
+java:S2441"":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8ìÖË°ì0
+b
+java:S4684Z"@Replace this persistent entity with a simple POJO or DTO object.(è³ÒÒùÿÿÿÿ8ïÖË°ì0
+\
+java:S2441]":Make "User" serializable or don't store it in the session.(ğòà¦úÿÿÿÿ8ğÖË°ì0

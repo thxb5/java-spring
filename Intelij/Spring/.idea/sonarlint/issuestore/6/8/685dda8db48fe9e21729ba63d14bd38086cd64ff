@@ -1,0 +1,25 @@
+
+x
+java:S1488!"[Immediately return this expression instead of assigning it to the temporary variable "str".(Èö—8€—ÇŸì0
+x
+java:S1488("[Immediately return this expression instead of assigning it to the temporary variable "str".(Áµ÷û8—ÇŸì0
+y
+java:S1488/"\Immediately return this expression instead of assigning it to the temporary variable "list".(Â¥ÁŞ8—ÇŸì0
+}
+java:S14886"[Immediately return this expression instead of assigning it to the temporary variable "str".(À²üÁÿÿÿÿÿ8—ÇŸì0
+}
+java:S1488="[Immediately return this expression instead of assigning it to the temporary variable "str".(·««„ıÿÿÿÿ8—ÇŸì0
+y
+java:S1488D"\Immediately return this expression instead of assigning it to the temporary variable "cart".(Í©ññ8—ÇŸì0
+z
+java:S1488‡"\Immediately return this expression instead of assigning it to the temporary variable "cart".(µ§×à8Ç¨ÈŸì0
+X	java:S125O"<This block of commented-out lines of code should be removed.(õÅ…¾8—ÇŸì0
+U	java:S106["9Replace this use of System.out or System.err by a logger.(²æ½Ü8‘—ÇŸì0
+U	java:S106c"9Replace this use of System.out or System.err by a logger.( ëÕŞ8’—ÇŸì0
+U	java:S106m"9Replace this use of System.out or System.err by a logger.(Ø°È—8“—ÇŸì0
+T	java:S106n"9Replace this use of System.out or System.err by a logger.(¥ôÄ8“—ÇŸì0
+\
+java:S2441o":Make "Cart" serializable or don't store it in the session.(ûá•öûÿÿÿÿ8“—ÇŸì0
+T	java:S106x"9Replace this use of System.out or System.err by a logger.(¥ôÄ8“—ÇŸì0
+^	java:S125"<This block of commented-out lines of code should be removed.(ò‘ÜÃşÿÿÿÿ8“—ÇŸì0
+V	java:S106…"9Replace this use of System.out or System.err by a logger.(øÄñí8”—ÇŸì0

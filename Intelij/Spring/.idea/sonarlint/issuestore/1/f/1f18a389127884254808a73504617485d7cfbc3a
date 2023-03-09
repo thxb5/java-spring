@@ -1,5 +1,7 @@
 
 €
-java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(õñõÍøÿÿÿÿ8í»Èİë0
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(õñõÍøÿÿÿÿ8Ó¦Ç°ì0
 ~
-java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "user".(ìŞæÕúÿÿÿÿ8˜ÃÎÕë0
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "user".(ìŞæÕúÿÿÿÿ8Ó¦Ç°ì0
+
+java:S1488!"]Immediately return this expression instead of assigning it to the temporary variable "user2".(¶Ş¹ôûÿÿÿÿ8Ó¦Ç°ì0

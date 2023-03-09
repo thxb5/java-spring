@@ -23,5 +23,15 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public void userModify(User user) {
+        userRepository.userUpdate(user);
+    }
+
+    @Override
+    public User userInfo(User user) {
+        User user2 = userRepository.userInfo(user);
+        return user2;
+    }
 
 }//class

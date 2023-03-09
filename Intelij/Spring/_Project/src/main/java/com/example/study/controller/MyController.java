@@ -46,13 +46,18 @@ public class MyController {
 
     //회원가입 페이지
     @GetMapping("/join")
-    public String joinPage() {
+    public String joinPage(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
         return "view/join";
     }
 
     //회원가입
     @PostMapping("/joinUser")
-        public String join(@RequestParam(value = "userNickname") String userNickname, @RequestParam(value = "userId") String userId, @RequestParam(value = "userPw") String userPw, @RequestParam(value = "userEmail") String userEmail){
+        public String join(@RequestParam(value = "userNickname") String userNickname, @RequestParam(value = "userId") String userId, @RequestParam(value = "userPw") String userPw, @RequestParam(value = "userEmail") String userEmail, HttpSession session, Model model){
+            User user = (User) session.getAttribute("user");
+            model.addAttribute("user",user);
+
             userRepository.save(User.builder().userId(userId).userPw(userPw).userNickname(userNickname).userEmail(userEmail).build());
         return "redirect:/";
     }
@@ -66,7 +71,28 @@ public class MyController {
 
     //마이페이지
     @GetMapping("/mypage")
-    public String mypage() {
+    public String mypage(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
         return "view/mypage";
     }
-}
+
+    //개인정보 수정페이지
+    @GetMapping("/myAccount")
+    public String myAccount(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
+        return "view/myAccount";
+    }
+
+    //개인정보 수정
+    @PostMapping("userUpdate.do")
+    public String userUpdate(User user, HttpSession session) {
+        userServiceImpl.userModify(user);
+        User user2 = userServiceImpl.userInfo(user);
+        session.setAttribute("user",user2);
+        return "redirect:/myAccount";
+    }
+
+
+} // Class
