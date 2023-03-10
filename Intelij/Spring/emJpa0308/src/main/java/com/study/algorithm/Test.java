@@ -7,7 +7,8 @@ public class Test {
         for(int i=0; i<a.length; i++) {
             sum += a[i];
         }
+        double average = (double)sum / a.length;
 
-        System.out.println(sum);
+        System.out.println(average);
     }
 }

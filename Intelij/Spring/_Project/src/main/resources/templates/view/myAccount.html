@@ -19,7 +19,8 @@
     border: 1px solid black;
     width: 1000px;
     height: 700px;
-    margin-left: 15px;
+    margin-left: 50px;
+    margin-top: 43px;
   }
 
   .user_fixForm{
@@ -61,7 +62,12 @@
 
 
   .myFont {
-    font-size: 15px;
+    font-size: 30px;
+    margin-left: 10px;
+  }
+
+  .fa-address-card:before {
+    margin-right: 10px;
   }
 
 
@@ -73,11 +79,16 @@
     <div class="user-form">
       <form class="user_fixForm" action="userUpdate.do" method="post" th:object="${user}">
         <div>
-          <div class="myFont">개인정보 수정</div>
+          <div class="myFont"><i class="fa fa-address-card" aria-hidden="true"></i>개인정보 수정</div>
         </div>
         <div class="user-info">
           <div class="user-image">
-            프로필 이미지, 수정 자리
+            <div>
+              이미지 넣을자리
+            </div>
+            <div>
+                <input type="button" value="이미지 수정" onclick="imageFix()">
+            </div>
           </div>
           <div>
             <div class="user-input">
@@ -117,7 +128,6 @@
     useremail = $('#user_email').val();
     const emailCK = useremail;
 
-
     if(userpw == "") {
       alert("비밀번호를 입력해주세요.");
       $('#userpw').focus();
@@ -138,6 +148,16 @@
       alert("정보수정 성공!");
       return true;
     }
+
+  }
+
+  //이미지 정보 수정
+  function imageFix() {
+    var url = "/userImage";
+    var name = "popup image";
+    var option = "width = 300, height = 300, top = 200, left = 300, location = no"
+
+    window.open(url, name, option);
 
   }
 

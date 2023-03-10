@@ -273,7 +273,8 @@ body a {
 
     //마이페이지 클릭시 로그인 확인
     function mypageCheck() {
-        if(user == "") {
+        console.log(user);
+        if(user == null) {
             alert('먼저 로그인해주세요.')
             return false;
         } else {
@@ -281,8 +282,6 @@ body a {
             return true;
         }
     }
-
-
 
 
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+.imageDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.image{
+    height: 130px;
+    width: 130px;
+    border-radius: 75px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+    font-size: 20px;
+}
+
+.btn-one{
+    margin-right: 20px;
+}
+
+
+
+
+</style>
+<body>
+    <form>
+      <form method="post" enctype="multipart/form-data" class="btn">
+          <div class="imageDiv">
+<!--             <div id="imageDefault">-->
+<!--                 <img class="image" src="images/images.png" alt="이미지 기본">-->
+<!--             </div>-->
+             <div id="imageSelect">
+
+             </div>
+          </div>
+          <div id="btn-one">
+              <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+              <input type="submit" id="submitBtn">
+          </div>
+          <div id="btn-two">
+<!--              <b href="">삭제</b>-->
+          </div>
+      </form>
+        <div>
+<!--            <input type="submit" value="저장하기">-->
+        </div>
+    </form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script th:inline="javascript">
+
+    //이미지 선택
+    function loadFile(input) {
+        var file = input.files[0]; //선택된 이미지 가져오기
+
+        //미리 만들어 놓은 div에 text(파일 이름) 추가
+        var name = document.getElementById('imageSelect');
+        name.textContent = file.name;
+
+        //새로운 이미지 div 추가
+        var newImage = document.createElement('img');
+        newImage.setAttribute("class", "img");
+
+        //이미지 source 가져오기
+        newImage.src = URL.createObjectURL(file);
+
+        newImage.style.width = "130px";
+        newImage.style.height = "130px";
+        newImage.style.borderradius = "75px";
+        newImage.style.visibility = "hidden"; //버튼을 누를때까지 이미지를 숨김
+        newImage.style.objectFit = "contain";
+
+        //이미지를 image-show div에 추가
+        var container = document.getElementById('image-show');
+        container.appendChild(newImage);
+
+    }
+
+    //이미지 입력
+    var submit = document.getElementById('submitBtn');
+    submit.onclick = showImage;
+
+    function showImage() {
+        var newImage = document.getElementById('image-show').lastElementChild;
+
+        //이미지는 화면에 나타나고
+        newImage.style.visibility = 'visible';
+
+        //기존 이미지는 숨겨진다
+        // var defaultImage = document.getElementById('imageDefault');
+        // defaultImage.style.visibility = 'hidden';
+
+        document.getElementById('fileName').textContent = null;
+
+    }
+
+
+</script>
+</html>

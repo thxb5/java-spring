@@ -94,5 +94,11 @@ public class MyController {
         return "redirect:/myAccount";
     }
 
+    //프로필 이미지 수정페이지
+    @GetMapping("/userImage")
+    public String userImage() {
+        return "view/imageFix";
+    }
+
 
 } // Class
