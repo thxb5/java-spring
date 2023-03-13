@@ -1,0 +1,49 @@
+
+b
+java:S1192°"KDefine a constant instead of duplicating this literal "updateinfo" 4 times.(§ÏÏÆ
+\
+java:S11921"FDefine a constant instead of duplicating this literal "alert" 9 times.(‘õà’
+b
+java:S11920"GDefine a constant instead of duplicating this literal "signup" 3 times.(ºøêüÿÿÿÿ
+k	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÕÃŸüÿÿÿÿ
+f	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·¦ùÛ
+f	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ø¼­
+f	java:S117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ò¸Ö
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—÷Ş¿ÿÿÿÿÿ
+l	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãâüÿÿÿÿ
+f	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å”“d
+l	java:S117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È­¸ùıÿÿÿÿ
+|
+java:S1488—"`Immediately return this expression instead of assigning it to the temporary variable "homeUser".(½·›âüÿÿÿÿ
+w
+java:S1488 "`Immediately return this expression instead of assigning it to the temporary variable "nickname".(˜Ôùå
+W
+java:S4973."<Strings and Boxed types should be compared using "equals()".(íƒú¸şÿÿÿÿ
+W
+java:S4973."<Strings and Boxed types should be compared using "equals()".(íƒú¸şÿÿÿÿ
+W
+java:S4973."<Strings and Boxed types should be compared using "equals()".(íƒú¸şÿÿÿÿ
+W
+java:S4973."<Strings and Boxed types should be compared using "equals()".(íƒú¸şÿÿÿÿ
+]
+java:S3973a"GUse indentation to denote the code conditionally executed by this "if".(”Ëö¸
+S
+java:S1854_"=Remove this useless assignment to local variable "myImgList".(“şœæ
+V	java:S125X"<This block of commented-out lines of code should be removed.(‰ºïÑùÿÿÿÿ
+Z
+java:S1854">Remove this useless assignment to local variable "del_result".(—÷Ş¿ÿÿÿÿÿ
+K
+java:S1481"/Remove this unused "del_result" local variable.(—÷Ş¿ÿÿÿÿÿ
+S
+java:S1854–"=Remove this useless assignment to local variable "up_result".(å”“d
+D
+java:S1481–".Remove this unused "up_result" local variable.(å”“d
+Y
+java:S1854Ÿ"=Remove this useless assignment to local variable "up_result".(È­¸ùıÿÿÿÿ
+J
+java:S1481Ÿ".Remove this unused "up_result" local variable.(È­¸ùıÿÿÿÿ
+S
+java:S1854Ç"7Remove this useless assignment to local variable "res".(€éœÑùÿÿÿÿ
+D
+java:S1481Ç"(Remove this unused "res" local variable.(€éœÑùÿÿÿÿ
+R	java:S125È"<This block of commented-out lines of code should be removed.(ã†äÊ

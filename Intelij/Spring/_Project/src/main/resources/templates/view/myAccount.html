@@ -51,9 +51,10 @@
   }
 
   .user-image {
+    display: flex;
+    justify-content: center;
     width: 245px;
     height: 470px;
-    background: cornflowerblue;
   }
 
   .user-input {
@@ -70,6 +71,25 @@
     margin-right: 10px;
   }
 
+  .default-img {
+    border-radius: 50%;
+    margin-top: 50px;
+    width: 155px;
+  }
+
+  .img-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .img-fixBtn {
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+  }
+
 
 </style>
 <body>
@@ -84,10 +104,15 @@
         <div class="user-info">
           <div class="user-image">
             <div>
-              이미지 넣을자리
-            </div>
-            <div>
-                <input type="button" value="이미지 수정" onclick="imageFix()">
+              <div th:if="${userProfimg != null}">
+                <canvas th:value="*{userProfimg}"></canvas>
+              </div>
+              <div th:if="${userProfimg == null}">
+                <img src="images/images.png" alt="기본 프로필" class="default-img">
+              </div>
+              <div class="img-btn">
+                  <input type="button" value="이미지 수정" onclick="imageFix()" class="img-fixBtn">
+              </div>
             </div>
           </div>
           <div>

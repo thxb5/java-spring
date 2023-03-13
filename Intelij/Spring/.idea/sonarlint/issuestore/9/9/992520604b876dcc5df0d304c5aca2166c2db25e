@@ -1,0 +1,22 @@
+
+U
+java:S1854":Remove this useless assignment to local variable "result".(µõöÏüÿÿÿÿ
+M
+java:S1854"7Remove this useless assignment to local variable "lik".(½°Ë£
+>
+java:S1481"(Remove this unused "lik" local variable.(½°Ë£
+F
+java:S1481"+Remove this unused "result" local variable.(µõöÏüÿÿÿÿ
+N
+java:S1854("9Remove this useless assignment to local variable "lknum".(ú«\
+?
+java:S1481("*Remove this unused "lknum" local variable.(ú«\
+P
+java:S18544":Remove this useless assignment to local variable "result".(ĞœÈÆ
+T
+java:S18542"9Remove this useless assignment to local variable "unlik".(ì“¾üÿÿÿÿ
+E
+java:S14812"*Remove this unused "unlik" local variable.(ì“¾üÿÿÿÿ
+A
+java:S14814"+Remove this unused "result" local variable.(ĞœÈÆ
+V	java:S125E"<This block of commented-out lines of code should be removed.(¾›¶àûÿÿÿÿ

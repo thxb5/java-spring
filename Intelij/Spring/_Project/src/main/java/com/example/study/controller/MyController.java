@@ -1,14 +1,21 @@
 package com.example.study.controller;
 
 import com.example.study.entity.User;
+import com.example.study.entity.UserImg;
 import com.example.study.repository.UserRepository;
+import com.example.study.service.UserImgService;
+import com.example.study.service.UserImgServiceImpl;
 import com.example.study.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -16,6 +23,7 @@ public class MyController {
 
     private final UserServiceImpl userServiceImpl;
     private final UserRepository userRepository;
+    private final UserImgServiceImpl userImgServiceImpl;
 
     //채널 메인
     @GetMapping("/")
@@ -97,7 +105,27 @@ public class MyController {
     //프로필 이미지 수정페이지
     @GetMapping("/userImage")
     public String userImage() {
-        return "view/imageFix";
+        return "view/imageUpload";
+    }
+
+    //프로필 이미지 수정
+    @PostMapping("imgUpload.do")
+    public void imgUpload(@RequestPart MultipartFile file, HttpSession session) throws IOException {
+        String ogUserFileName = file.getOriginalFilename();
+        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/upload";
+        User user = (User) session.getAttribute("user");
+        String user_id = user.getUserId();
+        String random = ""+Math.random();
+
+        String lastName = projectPath + "/" + random + file.getOriginalFilename();
+        String imgPath = "./upload/";
+        String realName = imgPath + random + ogUserFileName;
+
+        File dest = new File(lastName);
+        System.out.println("dest = " + dest);
+        file.transferTo(dest);
+
+        user.setUserProfimg();
     }
 
 

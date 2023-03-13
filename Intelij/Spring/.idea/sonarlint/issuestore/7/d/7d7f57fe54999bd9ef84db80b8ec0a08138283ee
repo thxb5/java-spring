@@ -1,0 +1,54 @@
+
+t
+java:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(¹Ù“ëıÿÿÿÿ
+`
+java:S1192›"IDefine a constant instead of duplicating this literal "imgCount" 4 times.(àÎí£
+f	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ‰Û³
+k	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ŞÚêúÿÿÿÿ
+k	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºĞ‡Ìÿÿÿÿÿ
+f	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òŠÔÕ
+f	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öô›
+l	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏŸ±ÿúÿÿÿÿ
+l	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûöÃçûÿÿÿÿ
+l	java:S117£"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éæ‹§úÿÿÿÿ
+l	java:S117´"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬¾˜úÿÿÿÿ
+g	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°¢‡ó
+l	java:S117¾"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûöÃçûÿÿÿÿ
+l	java:S117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü‹µîıÿÿÿÿ
+g	java:S117Á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈèÛÖ
+l	java:S117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼”ÀØûÿÿÿÿ
+l	java:S117Ò"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ…êúÿÿÿÿ
+g	java:S117å"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÒ
+l	java:S117æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûöÃçûÿÿÿÿ
+l	java:S117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«¼ËÒüÿÿÿÿ
+f	java:S117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ ı{
+w
+java:S1488„"aImmediately return this expression instead of assigning it to the temporary variable "up_result".(Ÿ ı{
+b
+java:S3973M"GUse indentation to denote the code conditionally executed by this "if".(ìÊ¢İúÿÿÿÿ
+^
+java:S3973Ú"GUse indentation to denote the code conditionally executed by this "if".(”Ëö¸
+V	java:S1255"<This block of commented-out lines of code should be removed.(ÎäÈÔùÿÿÿÿ
+V	java:S125?"<This block of commented-out lines of code should be removed.(¢¢±·ıÿÿÿÿ
+N
+java:S1854i"8Remove this useless assignment to local variable "imgs".(Çº÷™
+O
+java:S1854˜"8Remove this useless assignment to local variable "imgs".(Çº÷™
+O
+java:S1854¦"8Remove this useless assignment to local variable "imgs".(Çº÷™
+V
+java:S1854Á"?Remove this useless assignment to local variable "del_imgList".(ÈèÛÖ
+V	java:S899È";Do something with the "boolean" value returned by "delete".(²Œ­ûÿÿÿÿ
+j
+java:S4042È"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(²Œ­ûÿÿÿÿ
+T
+java:S1854Ø"=Remove this useless assignment to local variable "myImgList".(²¦¨¨
+W	java:S125Ş"<This block of commented-out lines of code should be removed.(º¸èÿÿÿÿÿ
+O
+java:S1854è"8Remove this useless assignment to local variable "imgs".(Çº÷™
+O
+java:S1854õ"8Remove this useless assignment to local variable "user".(óâèÀ
+O
+java:S1854ø"8Remove this useless assignment to local variable "imgs".(Çº÷™
+@
+java:S1481õ")Remove this unused "user" local variable.(óâèÀ

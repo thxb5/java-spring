@@ -1,0 +1,7 @@
+
+n	java:S116"TRename this field "subcom_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìİÛ×ıÿÿÿÿ
+k	java:S116"QRename this field "com_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¡»Ìüÿÿÿÿ
+k	java:S116"QRename this field "mem_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯µ˜Áøÿÿÿÿ
+p	java:S116"VRename this field "subcom_text" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒŠİÿÿÿÿÿ
+p	java:S116"VRename this field "subcom_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(° í½ûÿÿÿÿ
+g	java:S116"RRename this field "up_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡´ğö

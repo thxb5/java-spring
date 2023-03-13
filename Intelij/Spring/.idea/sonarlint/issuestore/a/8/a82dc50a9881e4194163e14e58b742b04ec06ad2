@@ -1,9 +1,19 @@
 
+r	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖœöÖúÿÿÿÿ8±–¥Óí0
 {
-java:S1488D"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8º±ŸÑì0
+java:S1488L"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8²–¥Óí0
 \
-java:S2441"":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8É±ŸÑì0
+java:S2441*":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8¾–¥Óí0
 b
-java:S4684Z"@Replace this persistent entity with a simple POJO or DTO object.(è³ÒÒùÿÿÿÿ8Ì±ŸÑì0
+java:S4684b"@Replace this persistent entity with a simple POJO or DTO object.(è³ÒÒùÿÿÿÿ8Á–¥Óí0
 \
-java:S2441]":Make "User" serializable or don't store it in the session.(ğòà¦úÿÿÿÿ8Í±ŸÑì0
+java:S2441e":Make "User" serializable or don't store it in the session.(ğòà¦úÿÿÿÿ8Á–¥Óí0
+^
+java:S1854z"<Remove this useless assignment to local variable "realName".(¤‡‘›şÿÿÿÿ8Á–¥Óí0
+]
+java:S1854u";Remove this useless assignment to local variable "user_id".(ÖœöÖúÿÿÿÿ8Á–¥Óí0
+N
+java:S1481u",Remove this unused "user_id" local variable.(ÖœöÖúÿÿÿÿ8Â–¥Óí0
+O
+java:S1481z"-Remove this unused "realName" local variable.(¤‡‘›şÿÿÿÿ8Â–¥Óí0
+Z	java:S106}"9Replace this use of System.out or System.err by a logger.(éÇ©ÿÿÿÿÿ8Ã–¥Óí0

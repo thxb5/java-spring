@@ -2,8 +2,7 @@ package com.example.study.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -18,4 +17,6 @@ public class User {
     private String userNickname;
     private String userEmail;
 
+    @OneToOne(mappedBy = "user")
+    private UserImg userImg = new UserImg();
 }

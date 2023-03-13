@@ -1,0 +1,13 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÓ“Å
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÓ“Å
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÓ“Å
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÓ“Å
+f	java:S116"QRename this field "img_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ¯Í
+l	java:S116"RRename this field "post_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥µö­øÿÿÿÿ
+k	java:S116"VRename this field "origin_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şğ¤
+i	java:S116"TRename this field "save_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òĞøÃ
+i	java:S116"TRename this field "save_path" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´•
+i	java:S116"TRename this field "delete_yn" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íà¿
+l	java:S116"RRename this field "in_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÇÂºøÿÿÿÿ
+m	java:S116"SRename this field "del_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªÔ¨ùÿÿÿÿ

@@ -1,0 +1,26 @@
+
+o
+java:S2293$"YReplace the type specification in this constructor call with the diamond operator ("<>").(§œ‹é
+k	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¶š’øÿÿÿÿ
+k	java:S1173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄË™“ÿÿÿÿÿ
+k	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÕÜÁûÿÿÿÿ
+f	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚¯‚‡
+f	java:S117X"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Ò³¿
+f	java:S117a"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇËá
+k	java:S117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÕÜÁûÿÿÿÿ
+f	java:S117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éø¢¥
+f	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ÆéÖ
+w
+java:S1488q"aImmediately return this expression instead of assigning it to the temporary variable "up_result".(‡ÆéÖ
+_
+java:S22597"IA "NullPointerException" could be thrown; "origin_name" is nullable here.(™‰îÚ
+h
+java:S2259,"MA "NullPointerException" could be thrown; "getContentType()" can return null.(ë§õÁøÿÿÿÿ
+_
+java:S2259c"IA "NullPointerException" could be thrown; "origin_name" is nullable here.(™‰îÚ
+h
+java:S2259\"MA "NullPointerException" could be thrown; "getContentType()" can return null.(òàÈıÿÿÿÿ
+B
+java:S1125,"'Remove the unnecessary boolean literal.(ë§õÁøÿÿÿÿ
+B
+java:S1125\"'Remove the unnecessary boolean literal.(òàÈıÿÿÿÿ

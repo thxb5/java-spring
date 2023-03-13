@@ -1,0 +1,19 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÓ¢¯
+f	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÓ¢¯
+M
+java:S1854!"7Remove this useless assignment to local variable "res".(¬÷Ó¾
+P
+java:S1854":Remove this useless assignment to local variable "mem_id".(äÓ¢¯
+Q	java:S125"<This block of commented-out lines of code should be removed.(¯¥þÌ
+A
+java:S1481"+Remove this unused "mem_id" local variable.(äÓ¢¯
+Q	java:S125 "<This block of commented-out lines of code should be removed.(›æØó
+>
+java:S1481!"(Remove this unused "res" local variable.(¬÷Ó¾
+Q	java:S125#"<This block of commented-out lines of code should be removed.(Ý¦ó’
+M
+java:S18540"7Remove this useless assignment to local variable "res".(ïÑ„ƒ
+>
+java:S14810"(Remove this unused "res" local variable.(ïÑ„ƒ
+V	java:S1252"<This block of commented-out lines of code should be removed.(¦ÿ€¨úÿÿÿÿ
