@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/view">
+<div layout:fragment="content">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/mypagemain.css" />
+</head>
+<body>
+    
+    <div id="mypage-customer-wrapper">
+        <div id="mypage-customer-container">
+            <div id="mypage-sidebar">
+                <div>
+                    <h3>회원 정보</h3>
+                    <!-- 마이페이지 열면 나오는 첫 화면. -->
+                    <!-- 간략한 최근 주문목록, 쿠폰, 포인트 출력 -->
+                </div>
+                <div>
+                    <h3>주문 목록</h3>
+                    <!-- 이 안에서 주문 취소, 배송 확인 -->
+                </div>
+                <div>
+                    <h3>내가 작성한 글</h3>
+                    <!-- 리뷰 혹은 qna 글 출력 -->
+                </div>
+                <div>
+                    <h3>회원 정보 수정</h3>
+                    <!-- 닉네임, 등 회원 개인정보 수정. -->
+                </div>
+            </div>
+            <div id="mypage-content">
+                <div id="mypage-upper-box">
+                    <h1> 최근 주문 상품 </h1>
+                    <!-- 3~5개정도 출력 -->
+                </div>
+                <div id="mypage-bottom-box">
+                    <div id="mypage-coupon-box">
+                        <h2>내 쿠폰</h2>
+                    </div>
+                    <div id="mypage-point-box">
+                        <h2>내 포인트</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</div>
+</html>

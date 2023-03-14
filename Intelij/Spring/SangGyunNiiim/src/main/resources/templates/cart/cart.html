@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/view">
+<div layout:fragment="content">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="/css/cart.css" />
+</head>
+<body>
+    
+<!-- fragment 처리 -->
+
+<div id="cart-wrapper">
+    <div id="cart-container">
+        <div id="cart-content">
+            <div>
+                <h1>장바구니</h1>
+            </div>
+            <div>
+                <h3>상품1</h3>
+                <h3>상품2</h3>
+                <h3>상품3</h3>
+            <!--  로그인 한 유저의 아이디와 카트 테이블의 유저 아이디 매칭해서 일치하는 상품 Dto 불러와서 출력. -->
+            <!--  jQuery로 각 상품의 가격*수량 계산해서 총 합계금액 출력. -->
+            </div>
+        </div>
+        <div id="cart-side-bar">
+            <div>
+                <h2>디테일 1</h2>
+            </div>
+            <div>
+                <h2> 결제 예정 금액</h2>
+                <h4> 상품 금액 </h4>
+                <h4> 할인 금액 </h4>
+                <h1> 합계 </h1>
+            </div>
+            <div>
+                주문하기 버튼
+                <!-- 주문하면 주문창으로 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</div>
+</html>

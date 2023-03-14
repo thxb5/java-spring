@@ -1,0 +1,10 @@
+
+i	java:S116"URename this field "product_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş²
+p	java:S116"VRename this field "category_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÀ–Öıÿÿÿÿ
+l	java:S116"WRename this field "product_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’©œÙ
+r	java:S116"XRename this field "product_price" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨¬îÿÿÿÿÿ
+s	java:S116"YRename this field "product_detail" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¤ÆÅûÿÿÿÿ
+s	java:S116"YRename this field "product_amount" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û ö±ûÿÿÿÿ
+g	java:S116"RRename this field "up_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡´ğö
+h	java:S116"SRename this field "mod_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êıœ±
+m	java:S116"SRename this field "cur_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŸ…¦şÿÿÿÿ

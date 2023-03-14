@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/css/common.css" />
+  <th:block th:replace="/fragments/config :: config"></th:block>
+  <!-- layout -->
+
+</head>
+<body>
+  <div id="wrapper">
+
+      <!-- header start-->
+    <th:block th:replace="/fragments/header :: header"></th:block>
+      <!-- header end -->
+
+    <div id="container">
+
+      <!-- sidebar start -->
+      <section id="side-bar">
+        sidebar(hidden)
+      </section>
+      <!-- sidebar end -->
+
+      <section id="main-container" layout:fragment="content">
+
+          <!-- carousel start-->
+        <th:block th:replace="/fragments/carousel :: carousel"></th:block>
+          <!-- carousel end-->
+
+          <!-- item card start-->
+          <div class="row row-cols-3 row-cols-md-3" style="width:85%; margin:0 auto; position: relative; top: 150px;">
+            <div class="col" th:each="item: ${itemList}">
+              <div class="card" style="cursor:pointer;">
+                <th:block th:each="img : ${imgList}">
+                  <th:block th:if="|${img.item.productId.equals(item.product_id)}|">
+                    <a th:href="@{/toDetail/{product_id}(product_id=${item.product_id})}">
+                      <img th:src="|/images/itemImgs/${img.modified_imgname}|" class="card-img-top" style="height: 230px">
+                    </a>
+                  </th:block>
+                </th:block>
+                <div class="card-body">
+                  <h5 class="card-title" th:text="${item.product_name}"></h5>
+                  <p class="card-text" th:text="${item.product_detail}"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" th:text="|${item.product_price}원|"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+         <!-- item card end-->
+
+      </section>
+    </div>
+  </div>
+
+  <!--   footer start   -->
+  <th:block th:replace="/fragments/footer :: footer"></th:block>
+  <!--   footer end   -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/resource/js/bootstrap.js"></script>
+</div>
+</body>
+</div>
+</html>

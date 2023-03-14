@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="post_form_container">
-        <form class="post_form" id="upload_form">
+        <form class="post_form" id="upload_form" method="post" action="/userImg" enctype="multipart/form-data">
             <div class="preview">
                 <div class="upload">
                     <div class="post_btn">
@@ -16,34 +16,34 @@
                 </div>
             </div>
             <input type="file" multiple="multiple" name="imgs" id="id_photo" required="required">
-            <input class="submit_btn" type="button" value="저장" th:onclick="insertImg()">
+            <input class="submit_btn" type="submit" value="저장"/>
         </form>
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script th:inline="javascript">
-    function insertImg() {
-        var uploadForm = $('#upload_form')[0];
-        var formData = new FormData(uploadForm);
-        $.ajax({
-            type: 'post',
-            url: 'imgUpload.do',
-            data: formData,
-            contentType: false,
-            processData: false,
-            enctype: 'multipart/form-data',
-            cache: false,
-            success: function(data) {
-                console.log(data);
-                alert("이미지를 등록했습니다.");
-                location.href = "/myAccount"
-            },
-            error: function(err) {
-                alert("이미지 등록 오류");
-                console.log(err);
-            }
-        })
-    }
+    // function insertImg() {
+    //     var uploadForm = $('#upload_form')[0];
+    //     var formData = new FormData(uploadForm);
+    //     $.ajax({
+    //         type: 'post',
+    //         url: 'imgUpload.do',
+    //         data: formData,
+    //         contentType: false,
+    //         processData: false,
+    //         enctype: 'multipart/form-data',
+    //         cache: false,
+    //         success: function(data) {
+    //             console.log(data);
+    //             alert("이미지를 등록했습니다.");
+    //             location.href = "/myAccount"
+    //         },
+    //         error: function(err) {
+    //             alert("이미지 등록 오류");
+    //             console.log(err);
+    //         }
+    //     })
+    // }
 
     var fileInput  = document.querySelector("#id_photo");
         button     = document.querySelector(".input-file-trigger"),

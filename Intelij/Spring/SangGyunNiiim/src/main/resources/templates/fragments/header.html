@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<th:block th:fragment="header">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css" />
+</head>
+<body>
+    
+    <section id="main-header">
+        <div class="upper-header">
+          <div class="left-nav-bar">
+            <div class="homelogo" onclick="location.href='/'"></div>
+          </div>
+          <div class="center-nav-bar">
+            <form>
+              <input type="search" class="search-bar" placeholder="검색" >
+            </form>
+          </div>
+          <div class="right-nav-bar">
+            <ul>
+              <li>
+                <a id="user-menu-box"><img src="/images/menu.png"/></a>
+                <ul class="depth-1">
+                    <li th:if="${session.loginUser?.is_admin} == 0"><a th:href="@{/toAdmin}">ADMIN PAGE</a></li>
+                    <!-- 관리자 로그인일 경우 -->
+                    <li th:if="${session.loginUser?.is_admin} == 1 and ${session.loginUser != null}"><a th:href="@{/toCustomer}">MY PAGE</a></li>
+                    <li th:if="${session.loginUser?.is_admin} == 1 and ${session.loginUser != null}"><a th:href="@{/toOrderList}">ORDER LIST</a></li>
+                    <li th:if="${session.loginUser?.is_admin} == 1 and ${session.loginUser != null}"><a th:href="@{/toPostList}">Q & A</a></li>
+                    <!-- 구매자 로그인일 경우 -->
+                </ul>
+              </li>
+              <li>
+                  <a id="cart-box" th:href="@{/toCart}">
+                      <img src="/images/cart.png" />
+                  </a>
+                <!-- 몇개 담았는지에 따라서 카트 이미지 위에 장바구니에 담긴 갯수 출력 -->
+                <!-- 11번가 참고 -->
+              </li>
+              <li>
+                  <a id="login-box"><img src="/images/usericon.png" /></a>
+                  <ul class="depth-1 login-ul">
+                      <li th:if="${session.loginUser == null}"><a th:href="@{/toLogin}">LOG IN</a></li>
+                      <li th:if="${session.loginUser != null}"><a th:href="@{/toLogout}">LOG OUT</a></li>
+                      <li th:if="${session.loginUser == null}"><a th:href="@{/toRegister}">SIGN UP</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </body>
+</th:block>
+</html>

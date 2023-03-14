@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/view">
+<div layout:fragment="content">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/regitem.css" />
+</head>
+<body>
+<div id="regitem-wrapper">
+    <h1>상품등록</h1>
+<form method="post" action="/uploadImg" enctype="multipart/form-data">
+    <div class="col-12">
+        <label for="categoryBox" class="form-label">카테고리</label>
+        <select class="form-select" name="category_id" required aria-label="Default select example" id="categoryBox">
+            <option value="1">의류</option>
+            <option value="2">가전제품</option>
+            <option value="3">식품</option>
+            <option value="4">인테리어</option>
+            <option value="5">전자제품</option>
+            <option value="6">뷰티</option>
+            <option value="7">스포츠</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <label for="prdName" class="form-label">상품명</label>
+        <input type="text" class="form-control" id="prdName" name="product_name">
+    </div>
+    <div class="row g-3 col-12">
+        <div class="col">
+            <label for="prdPrice" class="form-label">상품 가격</label>
+            <input type="text" id="prdPrice" class="form-control" name="product_price">
+        </div>
+        <div class="col">
+            <label for="prdAmount" class="form-label">상품 수량</label>
+            <input type="number" class="form-control" id="prdAmount" name="product_amount">
+        </div>
+    </div>
+    <div class="mb-3 col-12">
+        <label for="prdDetail" class="form-label">상품 설명</label>
+        <textarea class="form-control" id="prdDetail" name="product_detail" rows="3"></textarea>
+    </div>
+    <div class="mb-3 col-12">
+        <label for="prdImg" class="form-label">상품 사진</label>
+        <input class="form-control" type="file" id="prdImg" name="imgFile" multiple="multiple">
+    </div>
+    <div class="col-12 text-center">
+        <input type="submit" class="btn btn-primary" value="상품등록"/><!--id="submitbtn"-->
+    </div>
+</form>
+
+<!--    <form method="post" action="/uploadImg" enctype="multipart/form-data">-->
+<!--        <div id="form-content">-->
+<!--            <div id="category-box">-->
+<!--                <span>카테고리</span>-->
+<!--                <select name="category_id" required>-->
+<!--                    <option value="1">카테고리 1</option>-->
+<!--                    <option value="2">카테고리 2</option>-->
+<!--                    <option value="3">카테고리 3</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div id="prd-name-box">-->
+<!--            <span>상품명</span>-->
+<!--                <input type="text" id="prdname" class="textbox" name="product_name" />-->
+<!--            </div>-->
+<!--            <div id="prd-price-amount-box">-->
+<!--                <div id="prd-price-box">-->
+<!--              <span>상품가격</span>-->
+<!--                    <input type="text" id="prdprice" class="textbox2" name="product_price"/>-->
+<!--                </div>-->
+<!--                <div id="prd-amount-box">-->
+<!--                    <span>상품수량</span><input type="number" name="product_amount"/>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div id="prd-detail-box">-->
+<!--                <span>상품설명</span>-->
+<!--                <input type="textarea" id="prddetail" name="product_detail" />-->
+<!--            </div>-->
+<!--            <div id="prd-img-box">-->
+<!--                <span>상품사진</span>-->
+<!--                <input type="file" id="prdimg" name="imgFile" multiple="multiple"/>-->
+<!--                &lt;!&ndash; 파일명 db 저장. &ndash;&gt;-->
+<!--            </div>-->
+<!--            <div id="submit-box">-->
+<!--                <input type="submit" id="submitbtn" value="상품등록" />-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </form>-->
+</div>
+</body>
+</div>
+</html>

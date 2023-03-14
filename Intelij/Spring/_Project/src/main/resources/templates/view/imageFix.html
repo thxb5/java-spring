@@ -34,7 +34,7 @@
 </style>
 <body>
     <form>
-      <form method="post" enctype="multipart/form-data" class="btn">
+      <form method="post" enctype="multipart/form-data" action="/userImg" class="btn">
           <div class="imageDiv">
 <!--             <div id="imageDefault">-->
 <!--                 <img class="image" src="images/images.png" alt="이미지 기본">-->
@@ -45,7 +45,7 @@
           </div>
           <div id="btn-one">
               <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
-              <input type="submit" id="submitBtn">
+              <input type="submit" id="submitBtn" onclick="modifyImg()">
           </div>
           <div id="btn-two">
 <!--              <b href="">삭제</b>-->
@@ -87,22 +87,31 @@
     }
 
     //이미지 입력
-    var submit = document.getElementById('submitBtn');
-    submit.onclick = showImage;
-
-    function showImage() {
-        var newImage = document.getElementById('image-show').lastElementChild;
+    function modifyImg() {
+        //var newImage = document.getElementById('image-show').lastElementChild;
 
         //이미지는 화면에 나타나고
-        newImage.style.visibility = 'visible';
+        //newImage.style.visibility = 'visible';
 
         //기존 이미지는 숨겨진다
         // var defaultImage = document.getElementById('imageDefault');
         // defaultImage.style.visibility = 'hidden';
 
-        document.getElementById('fileName').textContent = null;
+        //document.getElementById('fileName').textContent = null;
 
-    }
+        //부모창을 새로고침하면서 팝업창을 닫는다.
+        opener.parent.location.reload();
+        window.close();
+
+    };
+
+
+
+
+
+
+
+
 
 
 </script>

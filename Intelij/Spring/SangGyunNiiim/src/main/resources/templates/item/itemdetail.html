@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/view">
+<div layout:fragment="content">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/itemdetail.css" />
+
+    <style>
+        #item-img-box {
+            position: relative;
+        }
+
+        #item-img-box img {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="item-detail-wrapper">
+        <div id="item-detail">
+            <div id="item-img-box">
+                <th:block th:each="img : ${imgList}">
+                    <img th:src="|/images/itemImgs/${img.modified_imgname}|" />
+                </th:block>
+                <!-- 넘어온 item 변수로 이미지 넣기-->
+            </div>
+            <div id="item-information">
+                <div class="detail-text-box">
+                    <h1>[[${item.product_name}]]</h1>
+                </div>
+                <div class="detail-text-box">
+                    <h3>[[${item.product_price}]]원</h3>
+                </div>
+                <div class="detail-text-box">
+                    <h3>[[${item.product_detail}]]</h3>
+                </div>
+                <div class="detail-text-box">
+                    잔여수량 : [[${item.product_amount}]]
+                </div>
+<!--                <div class="detail-text-box">-->
+<!--                    <h2> 디테일 1 </h2>-->
+<!--                </div>-->
+<!--                <div class="detail-text-box">-->
+<!--                    <h5> 디테일 1 </h5>-->
+<!--                </div>-->
+                <div class="detail-text-box">
+                    <p>혜택
+                    11번가 신한카드 첫 결제할인 + 최대 2% 적립
+                    최대 22개월 카드무이자 할부
+                    카드할인 혜택
+                    [광고]3월 쿠폰 : 20,000원 [쿠폰받기]
+                    L.POINT 사용</p>
+                </div>
+                <div>
+                    <h3>주문 수량</h3>
+                    <span><button><a href="/toOrder">주문하기</a></button></span>
+                    <span><button><a onclick="addItemToCart()" id="cartBtn">장바구니 추가</a></button></span>
+                </div>
+            </div>
+        </div>
+        <div id="item-detail-content">
+            아이템 세부 디테일 정보
+            <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maiores, quis minima incidunt voluptatibus error consectetur et reprehenderit. Repellendus laudantium voluptates ad doloremque neque dolore error dolorum soluta temporibus suscipit.
+            </span>
+        </div>
+        <div id="item-review-box">
+            리뷰란
+            <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maiores, quis minima incidunt voluptatibus error consectetur et reprehenderit. Repellendus laudantium voluptates ad doloremque neque dolore error dolorum soluta temporibus suscipit.
+            </span>
+            <!-- 리뷰란. 댓글 형식 페이징 처리 -->
+            <!-- ajax 비동기 렌더링 -->
+            <!-- 11번가 참고 -->
+        </div>
+        <div id="item-qna-box">
+            문의란
+            <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga maiores, quis minima incidunt voluptatibus error consectetur et reprehenderit. Repellendus laudantium voluptates ad doloremque neque dolore error dolorum soluta temporibus suscipit.
+            </span>
+            <!-- 문의란. 게시판 형식으로 페이징 처리 -->
+            <!-- ajax 비동기 렌더링 -->
+            <!-- 11번가 참고 -->
+        </div>
+    </div>
+<script src="/js/itemdetail.js"></script>
+<script>
+
+    function addItemToCart() {
+        console.log("카트추가버튼 테스트")
+    }
+
+    $('#cartBtn').click(function() {
+
+        let prdId = "위에서 넘어온 상품 번호";
+
+        $.ajax({
+            url: '/addItemToCart',
+            type: 'POST',
+            data: prdId,
+            dataType: text,
+            contentType: "charset=utf-8",
+            success: function(result) {
+                console.log(result);
+            }
+
+        })
+    })
+</script>
+</body>
+</div>
+</html>

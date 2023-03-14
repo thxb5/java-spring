@@ -1,7 +1,9 @@
 package com.example.study.service;
 
-import com.example.study.entity.UserImg;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 public interface UserImgService {
-    int userImg(UserImg userImg);
+    int userImg(MultipartFile[] imgs, String userId) throws IOException;
 }

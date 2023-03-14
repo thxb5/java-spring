@@ -1,0 +1,28 @@
+#cart-wrapper {
+    width: 70%;
+    margin: 0 auto;
+    height: 900px;
+    background: sandybrown;
+    /* height 지우기. 유동적으로 늘어나게 */
+}
+
+#cart-container {
+    display: flex;
+    width: 100%;
+}
+
+#cart-content {
+    position: relative;
+    top: 150px;
+    width: 70%;
+    height: 450px;
+    background: green;
+}
+
+#cart-side-bar {
+    position: relative;
+    top: 150px;
+    width: 30%;
+    height: 450px;
+    background: darksalmon;
+}

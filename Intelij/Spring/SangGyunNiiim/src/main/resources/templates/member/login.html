@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/view">
+<th:block layout:fragment="content">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/registerlogin.css" />
+</head>
+<body>
+    <div id="login-wrapper">
+        <div class="align-middle"><h2>Login</h2></div>
+        <form class="row g-3 text-center justify-content-center align-items-center">
+            <div class="col-8">
+                <label for="userId" class="form-label">ID</label>
+                <input type="text" class="form-control" id="userId" name="userId" placeholder="ID">
+            </div>
+            <div class="col-8">
+                <label for="userPw" class="form-label">Email</label>
+                <input type="password" class="form-control" id="userPw" name="userPassword" placeholder="PW">
+            </div>
+            <div class="row-cols-2"></div>
+            <div class="col-12 text-center">
+                <input type="button" class="btn btn-primary" onclick="memberLogin()" value="Login"/>
+            </div>
+        </form>
+    </div>
+<!--           <div class="login-container">-->
+<!--               <h2>Login</h2>-->
+<!--               <form>-->
+<!--                 <div class="box">-->
+<!--                   <h4 class="id">ID</h4>-->
+<!--                   <input class="input1" id="userId" name="userId" type="text" placeholder="ID" />-->
+<!--                 </div>-->
+<!--                 <div class="box">-->
+<!--                   <h4 class="password">password</h4>-->
+<!--                   <input class="input1" id="userPw" name="userPassword" type="password" placeholder="PW" />-->
+<!--                 </div>-->
+<!--                 <input id="input2" type="button" value="Log in" onclick="memberLogin()" />-->
+<!--               </form>-->
+<!--             </div>-->
+<!--         </div>-->
+    <script>
+
+        <!--    주말에 fetch 해보기    -->
+        function memberLogin() {
+            let user = {
+                userId : document.getElementById("userId").value,
+                userPassword : document.getElementById("userPw").value,
+            }
+
+            if(!user.userId || !user.userPassword) {
+                alert("모든 항목을 입력 해 주세요")
+                location.href="/toLogin"
+            } else {
+                $.ajax({
+                    url : "/login",
+                    type : "Post",
+                    contentType : 'application/json',
+                    data : JSON.stringify(user),
+                    dataType : 'text',
+                    success : function(data) {
+                        console.log(data)
+                        if(data == 1) {
+                            alert("아이디와 비밀번호가 맞지 않습니다");
+                        } else if(data == 2) {
+                            alert("로그인 성공");
+                            location.href="/"
+                        }
+                    },
+                    error : function(data) {
+                        alert("ajax 통신 실패");
+                    }
+                })
+            }
+        }
+    </script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+   </body>
+</th:block>
+</html>

@@ -109,23 +109,38 @@ public class MyController {
     }
 
     //프로필 이미지 수정
-    @PostMapping("imgUpload.do")
-    public void imgUpload(@RequestPart MultipartFile file, HttpSession session) throws IOException {
-        String ogUserFileName = file.getOriginalFilename();
-        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/upload";
+    @PostMapping("/userImg")
+    public String imgUpload(HttpSession session, MultipartFile[] imgs) throws IOException {
         User user = (User) session.getAttribute("user");
-        String user_id = user.getUserId();
-        String random = ""+Math.random();
+        String userId = user.getUserId();
+        int resultImg = userImgServiceImpl.userImg(imgs, userId);
+        String result;
 
-        String lastName = projectPath + "/" + random + file.getOriginalFilename();
-        String imgPath = "./upload/";
-        String realName = imgPath + random + ogUserFileName;
+        if(resultImg == 1) {
+            result = "성공";
+        } else {
+            result = "실패";
+        }
 
-        File dest = new File(lastName);
-        System.out.println("dest = " + dest);
-        file.transferTo(dest);
+        System.out.println("result = " + result);
+        
+//        String ogUserFileName = file.getOriginalFilename();
+//        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/upload";
+//        User user = (User) session.getAttribute("user");
+//        String user_id = user.getUserId();
+//        String random = ""+Math.random();
+//
+//        String lastName = projectPath + "/" + random + file.getOriginalFilename();
+//        String imgPath = "./upload/";
+//        String realName = imgPath + random + ogUserFileName;
+//
+//        File dest = new File(lastName);
+//        System.out.println("dest = " + dest);
+//        file.transferTo(dest);
+//
+//        user.setUserProfimg();
 
-        user.setUserProfimg();
+        return result;
     }
 
 

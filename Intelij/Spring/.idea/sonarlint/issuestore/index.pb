@@ -190,36 +190,16 @@ n
 >spring0307/src/main/java/com/study/spring0307/entity/Cart.java,0\9\098f15a420f594287ae0fc58638614afbef084b5
 w
 Ginstagram PJ/src/main/java/com/study/springboot/comment/CommentDao.java,e\b\eb2bd911532f259cc5e8d7d5cdfeb071b97dfb84
-u
-E_Project/src/main/java/com/example/study/service/UserServiceImpl.java,1\f\1f18a389127884254808a73504617485d7cfbc3a
 q
 A_Project/src/main/java/com/example/study/service/UserService.java,a\8\a8cd75689c184ef9ddaf0189fc6dc28fe4275a80
-x
-H_Project/src/main/java/com/example/study/service/UserImgServiceImpl.java,1\a\1a8425747f2179f9c0e4633417bf84ee1ea89817
-t
-D_Project/src/main/java/com/example/study/service/UserImgService.java,c\c\cc1cb1cd9a8be76f95aedd41772d17e71623a70d
 u
 Einstagram PJ/src/main/java/com/study/springboot/member/MemberDto.java,2\6\26fabcbe5097e0d862baa43dae9e23677e421192
-u
-E_Project/src/main/java/com/example/study/controller/MyController.java,a\8\a82dc50a9881e4194163e14e58b742b04ec06ad2
-w
-G_Project/src/main/java/com/example/study/repository/UserRepository.java,0\8\0864234b601b821f79f407de0c27e910b466e4be
-i
-9_Project/src/main/java/com/example/study/entity/User.java,1\c\1c1d7e8eb6497415ac060b009bd27b9af6477251
-l
-<_Project/src/main/java/com/example/study/entity/UserImg.java,9\e\9ec79525b022a1a4e6bd734b5df28253102176b5
-z
-J_Project/src/main/java/com/example/study/repository/UserImgRepository.java,7\6\762ccd30ec5c6b1f8a07dc472b62da1a0cabebea
 x
 Hinstagram PJ/src/main/java/com/study/springboot/like/LikeController.java,9\9\992520604b876dcc5df0d304c5aca2166c2db25e
-{
-Kinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgEntity.java,b\7\b78f136b6ec169d0cada68ced153111f29f8d68c
 x
 Hinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgDto.java,a\1\a1cd5cb3d9cd8cff81c20ec8d6548dc71fdd7233
 x
 Hinstagram PJ/src/main/java/com/study/springboot/post/PostController.java,7\d\7d7f57fe54999bd9ef84db80b8ec0a08138283ee
-t
-Dinstagram PJ/src/main/java/com/study/springboot/post/ImgService.java,d\c\dce1b852e1cc55824cd18cf59dd21f5e99b0000c
 w
 Ginstagram PJ/src/main/java/com/study/springboot/post/ImgController.java,a\7\a7d2980a4a2a01caf94e1469b7df29ef8e51e54a
 u
@@ -230,3 +210,43 @@ u
 Einstagram PJ/src/main/java/com/study/springboot/member/MemberDao.java,4\e\4e1fd926e72658c8fb9c2a489f6250e3cfbfb4ae
 |
 Linstagram PJ/src/main/java/com/study/springboot/member/MemberController.java,8\c\8c45c22d1b5461dcdc36839f3d4470ac877241fd
+c
+3_jsp0314/src/main/webapp/WEB-INF/views/testPage.jsp,1\3\13b98fa2e08d365ebd8921f8da6b58ef69632c19
+x
+H_jsp0314/src/main/java/com/study/springboot/controller/MyController.java,7\9\79b40937a058ff5ef21e9284c4db004e0f31da0d
+i
+9_Project/src/main/java/com/example/study/entity/User.java,1\c\1c1d7e8eb6497415ac060b009bd27b9af6477251
+x
+HSangGyunNiiim/src/main/java/com/mall/march/marchproject/entity/Item.java,7\6\760059bc85577f6e6b9e0953a31c8d41a563b9dd
+x
+HSangGyunNiiim/src/main/java/com/mall/march/marchproject/entity/User.java,f\c\fccda60e3f22fb27e3129c0ad293ca2df5192e72
+x
+HSangGyunNiiim/src/main/java/com/mall/march/marchproject/entity/Cart.java,f\b\fbf23cd1a79ac896f4d31ce1fab05932311133a9
+x
+HSangGyunNiiim/src/main/java/com/mall/march/marchproject/dto/ItemDto.java,8\5\85db70f08e7d1e6c054d2d33d2a7edec12649b5a
+t
+Dinstagram PJ/src/main/java/com/study/springboot/post/ImgService.java,d\c\dce1b852e1cc55824cd18cf59dd21f5e99b0000c
+{
+Kinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgEntity.java,b\7\b78f136b6ec169d0cada68ced153111f29f8d68c
+…
+USangGyunNiiim/src/main/java/com/mall/march/marchproject/controller/ImgController.java,7\4\7453bd52c2a2c5d1adad0757458f439af773ee12
+w
+GSangGyunNiiim/src/main/java/com/mall/march/marchproject/dto/ImgDto.java,8\4\84572c348c063e95435a850c5217b6e78091c5ee
+w
+GSangGyunNiiim/src/main/java/com/mall/march/marchproject/entity/Img.java,d\7\d78e1b07bc328b11a1201837179329832af35a5a
+u
+E_Project/src/main/java/com/example/study/service/UserServiceImpl.java,1\f\1f18a389127884254808a73504617485d7cfbc3a
+w
+G_Project/src/main/java/com/example/study/repository/UserRepository.java,0\8\0864234b601b821f79f407de0c27e910b466e4be
+ˆ
+XSangGyunNiiim/src/main/java/com/mall/march/marchproject/repository/ImgEntityManager.java,1\1\110b86a0093c026534ca28150a6b29125cf656a6
+z
+J_Project/src/main/java/com/example/study/repository/UserImgRepository.java,7\6\762ccd30ec5c6b1f8a07dc472b62da1a0cabebea
+x
+H_Project/src/main/java/com/example/study/service/UserImgServiceImpl.java,1\a\1a8425747f2179f9c0e4633417bf84ee1ea89817
+u
+E_Project/src/main/java/com/example/study/controller/MyController.java,a\8\a82dc50a9881e4194163e14e58b742b04ec06ad2
+t
+D_Project/src/main/java/com/example/study/service/UserImgService.java,c\c\cc1cb1cd9a8be76f95aedd41772d17e71623a70d
+l
+<_Project/src/main/java/com/example/study/entity/UserImg.java,9\e\9ec79525b022a1a4e6bd734b5df28253102176b5

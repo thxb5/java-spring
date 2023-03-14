@@ -1,0 +1,21 @@
+
+body {
+  font-family: "Lato", sans-serif;
+    margin: 0;
+  }
+  #wrapper {
+    min-width: 1020px;
+    border : 0;
+  }
+
+  #container {
+    position: relative;
+    align-items: center;
+    min-width: 1020px;
+    height: 2400px;
+  }
+
+  #side-bar {
+    display: none;
+    background: rosybrown;
+  }

@@ -1,0 +1,5 @@
+
+r	java:S116"VRename this field "origin_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şğ¤8¯Ëöúí0
+p	java:S116"TRename this field "save_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òĞøÃ8°Ëöúí0
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8³Ëöúí0

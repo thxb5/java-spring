@@ -15,11 +15,11 @@ java:S1488q"aImmediately return this expression instead of assigning it to the 
 _
 java:S22597"IA "NullPointerException" could be thrown; "origin_name" is nullable here.(™‰îÚ
 h
+java:S2259\"MA "NullPointerException" could be thrown; "getContentType()" can return null.(òàÈıÿÿÿÿ
+h
 java:S2259,"MA "NullPointerException" could be thrown; "getContentType()" can return null.(ë§õÁøÿÿÿÿ
 _
 java:S2259c"IA "NullPointerException" could be thrown; "origin_name" is nullable here.(™‰îÚ
-h
-java:S2259\"MA "NullPointerException" could be thrown; "getContentType()" can return null.(òàÈıÿÿÿÿ
 B
 java:S1125,"'Remove the unnecessary boolean literal.(ë§õÁøÿÿÿÿ
 B
