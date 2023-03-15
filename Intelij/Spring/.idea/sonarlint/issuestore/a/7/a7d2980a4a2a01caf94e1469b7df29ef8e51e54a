@@ -2,3 +2,5 @@
 k	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ¦²°ýÿÿÿÿ
 ~
 java:S1488,"cImmediately return this expression instead of assigning it to the temporary variable "urlResource".(²…îÐÿÿÿÿÿ
+g
+java:S2259,"EA "NullPointerException" could be thrown; "imgFile" is nullable here.(²…îÐÿÿÿÿÿ8¥ÌÈ§î0

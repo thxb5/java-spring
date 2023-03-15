@@ -6,4 +6,6 @@ import java.io.IOException;
 
 public interface UserImgService {
     int userImg(MultipartFile[] imgs, String userId) throws IOException;
+    void userImgDelete(String userId);
+    String userImgSearch(String userId);
 }

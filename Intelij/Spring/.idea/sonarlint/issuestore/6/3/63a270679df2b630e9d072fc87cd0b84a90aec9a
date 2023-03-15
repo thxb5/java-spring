@@ -1,0 +1,9 @@
+
+]
+java:S2094"BRemove this empty class, write its code or make it an "interface".(ÂÑŒûÿÿÿÿ
+V	java:S125
+"<This block of commented-out lines of code should be removed.(şßÂşÿÿÿÿ
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ

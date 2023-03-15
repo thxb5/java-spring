@@ -5,3 +5,5 @@ l	java:S116"RRename this field "post_id" to match the regular expression '^[a
 g	java:S116"SRename this field "com_text" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×“
 g	java:S116"SRename this field "com_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨¤¦
 g	java:S116"RRename this field "up_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁüÅí
+`
+java:S1128">Remove this unused import 'com.study.springboot.post.PostDto'.(„µºéùÿÿÿÿ8ÑÕÚŸî0

@@ -74,7 +74,8 @@
   .default-img {
     border-radius: 50%;
     margin-top: 50px;
-    width: 155px;
+    width: 200px;
+    height: 200px;
   }
 
   .img-btn {
@@ -104,11 +105,11 @@
         <div class="user-info">
           <div class="user-image">
             <div>
-              <div th:if="${userProfimg != null}">
-                <canvas th:value="*{userProfimg}"></canvas>
+              <div th:if="${userImg != null}">
+                <img th:src="@{images/userImg/} + ${userImg}" alt="유저 프로필" class="default-img" />
               </div>
-              <div th:if="${userProfimg == null}">
-                <img src="images/images.png" alt="기본 프로필" class="default-img">
+              <div th:if="${userImg == null}">
+                <img src="images/images.png" alt="기본 프로필" class="default-img"/>
               </div>
               <div class="img-btn">
                   <input type="button" value="이미지 수정" onclick="imageFix()" class="img-fixBtn">

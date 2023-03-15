@@ -1,0 +1,10 @@
+
+k
+java:S1192"IDefine a constant instead of duplicating this literal "datalist" 3 times.(¾šà±þÿÿÿÿ8é¡Œ™î0
+c
+java:S1192"FDefine a constant instead of duplicating this literal "title" 3 times.(Î—œò8ê¡Œ™î0
+X
+java:S49738"<Strings and Boxed types should be compared using "equals()".(á£ƒ$8ê¡Œ™î0
+X	java:S125"<This block of commented-out lines of code should be removed.(å¸‚¾8û¡Œ™î0
+[
+java:S1128"9Remove this unused import 'org.springframework.ui.Model'.(ê†ýÿÿÿÿ8ÄÃ‘™î0

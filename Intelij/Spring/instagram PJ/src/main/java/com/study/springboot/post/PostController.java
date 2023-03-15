@@ -18,11 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mysql.cj.Session;
 import com.study.springboot.comment.CommentDao;
 import com.study.springboot.comment.CommentDto;
 import com.study.springboot.comment.SubComShowDto;
-import com.study.springboot.comment.SubCommentDto;
 import com.study.springboot.like.LikeDao;
 import com.study.springboot.like.LikeDto;
 import com.study.springboot.member.MemberDao;
@@ -31,7 +29,6 @@ import com.study.springboot.post.img.PostImgDto;
 import com.study.springboot.post.img.PostImgEntity;
 import com.study.springboot.post.img.PostImgRepository;
 
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

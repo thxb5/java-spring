@@ -89,7 +89,10 @@ public class MyController {
     @GetMapping("/myAccount")
     public String myAccount(HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
+        String userId = user.getUserId();
+        String userImg = userImgServiceImpl.userImgSearch(userId);
         model.addAttribute("user",user);
+        model.addAttribute("userImg", userImg);
         return "view/myAccount";
     }
 
@@ -109,21 +112,13 @@ public class MyController {
     }
 
     //프로필 이미지 수정
-    @PostMapping("/userImg")
-    public String imgUpload(HttpSession session, MultipartFile[] imgs) throws IOException {
+    @PostMapping("userImg.do")
+    @ResponseBody
+    public void imgUpload(HttpSession session, MultipartFile[] imgs) throws IOException {
         User user = (User) session.getAttribute("user");
         String userId = user.getUserId();
         int resultImg = userImgServiceImpl.userImg(imgs, userId);
-        String result;
 
-        if(resultImg == 1) {
-            result = "성공";
-        } else {
-            result = "실패";
-        }
-
-        System.out.println("result = " + result);
-        
 //        String ogUserFileName = file.getOriginalFilename();
 //        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/upload";
 //        User user = (User) session.getAttribute("user");
@@ -139,8 +134,15 @@ public class MyController {
 //        file.transferTo(dest);
 //
 //        user.setUserProfimg();
+    }
 
-        return result;
+    //프로필 이미지 삭제
+    @PostMapping("userImgDel.do")
+    @ResponseBody
+    public void imgDelete(HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        String userId = user.getUserId();
+        userImgServiceImpl.userImgDelete(userId);
     }
 
 

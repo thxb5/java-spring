@@ -1,19 +1,22 @@
 
 {
-java:S1488L"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8ÇÉôûí0
+java:S1488L"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8—¸À¡î0
 \
-java:S2441*":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8ÑÉôûí0
+java:S2441*":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8¥¸À¡î0
 b
-java:S4684b"@Replace this persistent entity with a simple POJO or DTO object.(è³ÒÒùÿÿÿÿ8ÔÉôûí0
+java:S4684e"@Replace this persistent entity with a simple POJO or DTO object.(è³ÒÒùÿÿÿÿ8©¸À¡î0
 \
-java:S2441e":Make "User" serializable or don't store it in the session.(ğòà¦úÿÿÿÿ8ÔÉôûí0
-Z	java:S106}"9Replace this use of System.out or System.err by a logger.(±ÚÂ˜øÿÿÿÿ8¯º÷ûí0
-]	java:S125"<This block of commented-out lines of code should be removed.(üõıùÿÿÿÿ8ÕÉôûí0
+java:S2441h":Make "User" serializable or don't store it in the session.(ğòà¦úÿÿÿÿ8©¸À¡î0
+_
+java:S1854x"=Remove this useless assignment to local variable "resultImg".(•Úì‰şÿÿÿÿ8ª¸À¡î0
+P
+java:S1481x".Remove this unused "resultImg" local variable.(•Úì‰şÿÿÿÿ8«¸À¡î0
+]	java:S125z"<This block of commented-out lines of code should be removed.(üõıùÿÿÿÿ8¬¸À¡î0
 Z
-java:S1128"=Remove this unused import 'com.example.study.entity.UserImg'.(œâú”8ÀÂ´üí0
+java:S1128"=Remove this unused import 'com.example.study.entity.UserImg'.(œâú”8ÓçÁ¡î0
 b
-java:S1128"ERemove this unused import 'com.example.study.service.UserImgService'.(ßªò8ÀÂ´üí0
+java:S1128"ERemove this unused import 'com.example.study.service.UserImgService'.(ßªò8ÓçÁ¡î0
 F
-java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8ÀÂ´üí0
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8ÓçÁ¡î0
 M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÀÂ´üí0
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÔçÁ¡î0

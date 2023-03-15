@@ -6,7 +6,6 @@ import com.study.springboot.post.ImgService;
 import com.study.springboot.post.PostDao;
 import com.study.springboot.post.PostDto;
 import com.study.springboot.post.img.PostImgDto;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;

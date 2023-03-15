@@ -5,3 +5,5 @@ k	java:S116"QRename this field "mem_id" to match the regular expression '^[a-
 p	java:S116"VRename this field "subcom_text" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒŠİÿÿÿÿÿ
 p	java:S116"VRename this field "subcom_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(° í½ûÿÿÿÿ
 g	java:S116"RRename this field "up_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡´ğö
+`
+java:S1128">Remove this unused import 'com.study.springboot.post.PostDto'.(„µºéùÿÿÿÿ8¤àÚŸî0
