@@ -130,6 +130,12 @@ body a {
     display: flex;
 }
 
+.user-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
 /* 버튼 css */
 
 .btnList {
@@ -170,6 +176,9 @@ body a {
                     <div class="myBtn">
                         <div th:if="${user == null}" id="loginBtn">
                             <a id="login_btn">로그인</a>
+                        </div>
+                        <div th:if="${user != null}">
+                            <img th:src="|${userImg}|" alt="유저 프로필" class="user-img" />
                         </div>
                         <div th:if="${user != null}" id="logoutBtn" >
                             <a href="logout.do">로그아웃</a>

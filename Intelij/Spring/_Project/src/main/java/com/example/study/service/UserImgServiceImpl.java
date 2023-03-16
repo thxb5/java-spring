@@ -5,10 +5,13 @@ import com.example.study.repository.UserImgRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Service
 @RequiredArgsConstructor
@@ -16,11 +19,12 @@ public class UserImgServiceImpl implements UserImgService {
 
     private final UserImgRepository userImgRepository;
 
-    @Value("${spring.servlet.multipart.location}")
+    @Value("${file.dir.userImg}")
     private String userImgDir;
 
     //유저 이미지 생성 및 변경
     @Override
+    @ResponseBody
     public int userImg(MultipartFile[] imgs, String userId) throws IOException {
 
         for (MultipartFile img : imgs) {
@@ -33,23 +37,28 @@ public class UserImgServiceImpl implements UserImgService {
             //기존 파일 확장자
             String extension = originalFileName.substring(result, length);
 
+            //파일명에 붙는 현재 시간
+            Date currentDate = new Date();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyMMdd");
+            String nowDate = simpleDateFormat.format(currentDate);
+
             //저장할 새로운 파일 이름
-            String newFileName = userId + "_" + System.nanoTime() + extension;
+            String newFileName = userId + "_" + nowDate + extension;
 
             //해당 유저가 가진 프로필 이미지 파일 삭제
-            String dirPath = "C:/_Intellij/Spring/_Project/src/main/resources/static/images/userImg";
-            File dirFile = new File(dirPath);
+            File dirFile = new File(userImgDir);
             String fileList[] = dirFile.list();
             for(int i = 0; i < fileList.length; i++) {
                 String chkFileNm = fileList[i];
                 if(chkFileNm.startsWith(userId+"_")) {
-                    File delFile = new File(dirPath + File.separator + chkFileNm);
+                    File delFile = new File(userImgDir + File.separator + chkFileNm);
                     delFile.delete();
                 }
             }
 
             if (!img.isEmpty()) {
-                UserImg imgg = UserImg.builder().origin_name(originalFileName).save_name(newFileName).build();
+                String savePath = userImgDir + newFileName;
+                UserImg imgg = UserImg.builder().origin_name(originalFileName).save_name(newFileName).userimg_path(savePath).build();
 
                 //유저 이미지 유무 확인
                 String imgCk = userImgRepository.userImgCheck(userId);
@@ -64,8 +73,8 @@ public class UserImgServiceImpl implements UserImgService {
                 }
 
                 //이미지 지정된 경로에 저장
-                //File modifiedFileName = new File(newFileName);
-                img.transferTo(new File(userImgDir));
+                File modifiedFileName = new File(userImgDir + newFileName);
+                img.transferTo(modifiedFileName);
             }
         }
         return 1;

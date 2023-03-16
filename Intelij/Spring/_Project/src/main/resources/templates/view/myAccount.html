@@ -51,8 +51,6 @@
   }
 
   .user-image {
-    display: flex;
-    justify-content: center;
     width: 245px;
     height: 470px;
   }
@@ -81,8 +79,7 @@
   .img-btn {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 30px;
+    margin-top: 40px;
   }
 
   .img-fixBtn {
@@ -90,7 +87,27 @@
     height: 50px;
     font-size: 16px;
   }
+  .userPro {
+    display: flex;
+    justify-content: center;
+  }
+  .submitBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 67px
+  }
 
+  .modal {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    display: none;
+    top: 21px;
+    left: 926px;
+  }
 
 </style>
 <body>
@@ -105,15 +122,18 @@
         <div class="user-info">
           <div class="user-image">
             <div>
-              <div th:if="${userImg != null}">
-                <img th:src="@{images/userImg/} + ${userImg}" alt="유저 프로필" class="default-img" />
+              <div th:if="${userImg != null}" class="userPro">
+                <img th:src="${userImg}" alt="유저 프로필" class="default-img" />
               </div>
-              <div th:if="${userImg == null}">
+              <div th:if="${userImg == null}" class="userPro">
                 <img src="images/images.png" alt="기본 프로필" class="default-img"/>
               </div>
               <div class="img-btn">
-                  <input type="button" value="이미지 수정" onclick="imageFix()" class="img-fixBtn">
+                  <input type="button" value="이미지 수정" class="img-fixBtn">
               </div>
+            </div>
+            <div class="submitBtn">
+              <input type="submit" class="user-modify" value="정보 수정" onclick="return checkID()">
             </div>
           </div>
           <div>
@@ -131,15 +151,34 @@
                 <input type="text" name="userEmail" id="user_email" th:value="*{userEmail}">
               </div>
             </div>
-            <div>
-              <input type="submit" class="user-modify" value="정보 수정" onclick="return checkID()">
-            </div>
           </div>
         </div>
       </form>
     </div>
   </div>
 </div>
+<div class="modal">
+  <div class="post_form_container">
+    <form class="post_form" id="upload_form">
+      <div class="preview">
+        <div class="upload">
+          <div class="post_btn">
+            <h3 class="upload">프로필 이미지 수정</h3>
+            <canvas id="imageCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="inputBtn">
+        <input type="file" multiple="multiple" name="imgs" id="id_photo" required="required">
+      </div>
+      <div class="inputBtn">
+        <input class="submit_btn" type="button" value="저장" onclick="submitImg()"/>
+        <input class="delete_btn" type="button" value="삭제" onclick="deleteImg()"/>
+      </div>
+    </form>
+  </div>
+</div>
+
 </body>
 
 <script th:inline="javascript">
@@ -177,15 +216,89 @@
 
   }
 
-  //이미지 정보 수정
-  function imageFix() {
-    var url = "/userImage";
-    var name = "popup image";
-    var option = "width = 300, height = 300, top = 200, left = 300, location = no"
+  $(function(){
+    $(".img-fixBtn").click(function(){
+      $(".modal").fadeIn();
+    });
 
-    window.open(url, name, option);
+    $(".submit_btn").click(function(){
+      $(".modal").fadeOut();
+    })
+  })
 
+  var fileInput  = document.querySelector("#id_photo");
+  button     = document.querySelector(".input-file-trigger"),
+          the_return = document.querySelector(".file-return");
+
+  // show image
+  fileInput.addEventListener('change', handleImage, false);
+  var canvas = document.getElementById('imageCanvas');
+  var ctx = canvas.getContext('2d');
+
+  function handleImage(e) {
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      var img = new Image();
+      img.onload = function() {
+        canvas.width = 200;
+        canvas.height = 200;
+        ctx.drawImage(img,0,0,200,200);
+      };
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(e.target.files[0])
   }
+
+  function refresh() {
+    location.href = "/myAccount";
+  }
+
+  //이미지 등록
+  function submitImg() {
+    var uploadForm = $('#upload_form')[0];
+    var formData = new FormData(uploadForm );
+    $.ajax({
+      type: 'post',
+      url: 'userImg.do',
+      data: formData,
+      contentType : false,
+      processData : false,
+      enctype: 'multipart/form-data',
+      cache: false,
+      success: function(data){
+        alert("이미지 수정완료");
+        refresh();
+        modal.closed();
+      },
+      error: function(err) {
+        alert("이미지 수정오류");
+        console.log(err);
+      }
+    })
+  }
+
+
+  //이미지 삭제
+  function deleteImg() {
+    $.ajax({
+      type: 'post',
+      url: 'userImgDel.do',
+      success: delImg,
+      error: function(err) {
+        alert("이미지 삭제오류");
+        console.log(err);
+      }
+    })
+  }
+
+  function delImg() {
+    // $('#imageCanvas').empty();
+    // $('#id_photo').empty();
+    refresh();
+  }
+
+
+
 
 
 

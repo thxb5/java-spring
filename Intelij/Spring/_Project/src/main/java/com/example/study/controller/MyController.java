@@ -7,14 +7,17 @@ import com.example.study.service.UserImgService;
 import com.example.study.service.UserImgServiceImpl;
 import com.example.study.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -25,12 +28,27 @@ public class MyController {
     private final UserRepository userRepository;
     private final UserImgServiceImpl userImgServiceImpl;
 
-    //채널 메인
+    @Value("${file.dir.userImg}")
+    private String userImgDir;
+
+    //메인 페이지
     @GetMapping("/")
-    public String header(HttpSession session, Model model){
+    public String main(HttpSession session, Model model){
         User user = (User) session.getAttribute("user");
         model.addAttribute("user",user);
         return "view/main";
+    }
+
+    //헤더 요청
+    @RequestMapping("/header")
+    public String header(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        String userId = user.getUserId();
+        String userImg = userImgServiceImpl.userImgSearch(userId);
+
+        model.addAttribute("user",user);
+        model.addAttribute("userImg", userImg);
+        return "fragments/header";
     }
 
     //로그인 처리
@@ -48,7 +66,7 @@ public class MyController {
     //로그아웃 처리
     @RequestMapping("logout.do")
     public String logout(HttpSession session) {
-        session.setAttribute("user",null);
+        session.removeAttribute("user");
         return "redirect:/";
     }
 
@@ -91,6 +109,7 @@ public class MyController {
         User user = (User) session.getAttribute("user");
         String userId = user.getUserId();
         String userImg = userImgServiceImpl.userImgSearch(userId);
+
         model.addAttribute("user",user);
         model.addAttribute("userImg", userImg);
         return "view/myAccount";
@@ -114,10 +133,16 @@ public class MyController {
     //프로필 이미지 수정
     @PostMapping("userImg.do")
     @ResponseBody
-    public void imgUpload(HttpSession session, MultipartFile[] imgs) throws IOException {
+    public int imgUpload(HttpSession session, MultipartFile[] imgs,Model model) throws IOException {
         User user = (User) session.getAttribute("user");
         String userId = user.getUserId();
-        int resultImg = userImgServiceImpl.userImg(imgs, userId);
+        int data = userImgServiceImpl.userImg(imgs, userId);
+        if (data == 1)  {
+            String userImg = userImgServiceImpl.userImgSearch(userId);
+            model.addAttribute("userImg", userImg);
+        }
+
+
 
 //        String ogUserFileName = file.getOriginalFilename();
 //        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/upload";
@@ -134,6 +159,7 @@ public class MyController {
 //        file.transferTo(dest);
 //
 //        user.setUserProfimg();
+        return data;
     }
 
     //프로필 이미지 삭제
@@ -144,6 +170,15 @@ public class MyController {
         String userId = user.getUserId();
         userImgServiceImpl.userImgDelete(userId);
     }
+
+    //프로필 이미지 불러오기
+//    @GetMapping("/images/userImg/{userImg}")
+//    public ResponseEntity<?> getProfileImg (String userId) {
+//        String userImg = userImgServiceImpl.userImgSearch(userId);
+//        String realPath = userImgDir + userImg;
+//        byte[] imageByteArray = realPath.getBytes();
+//        return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
+//    }
 
 
 } // Class

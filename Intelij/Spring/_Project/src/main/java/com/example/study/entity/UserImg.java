@@ -18,6 +18,7 @@ public class UserImg {
     private Long imgId;
     private String origin_name;
     private String save_name;
+    private String userimg_path;
 
     @OneToOne
     @JsonIgnore

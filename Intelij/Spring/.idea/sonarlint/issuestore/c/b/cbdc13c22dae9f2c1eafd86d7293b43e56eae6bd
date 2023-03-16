@@ -1,0 +1,10 @@
+
+L
+java:S1197"*Move the array designators [] to the type.(ÅØÀúÿÿÿÿ8îıÖ¾î0
+H
+java:S1905"&Remove this unnecessary cast to "int".(ûÏæ»úÿÿÿÿ8ñıÖ¾î0
+n
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(ø…Ì‘8Î¦á¾î0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ø…Ì‘8„˜à¾î0
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Åôà¾î0
