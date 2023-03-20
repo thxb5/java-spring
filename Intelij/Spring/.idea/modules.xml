@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/_mongo0315.springboot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/_mongo0315.springboot.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/_upload0316.main.iml" filepath="$PROJECT_DIR$/.idea/modules/_upload0316.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.study.springboot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.study.springboot.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.study.upload0317.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.study.upload0317.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emJpa0307_2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/emJpa0307_2.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emJpa0308.main.iml" filepath="$PROJECT_DIR$/.idea/modules/emJpa0308.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/instaPJ.main.iml" filepath="$PROJECT_DIR$/.idea/modules/instaPJ.main.iml" />
@@ -17,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring0307.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring0307.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring0308.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring0308.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/upload0317.main.iml" filepath="$PROJECT_DIR$/.idea/modules/upload0317.main.iml" />
     </modules>
   </component>
 </project>

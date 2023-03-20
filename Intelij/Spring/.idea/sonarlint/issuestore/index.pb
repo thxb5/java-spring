@@ -86,8 +86,6 @@ Jspring0308/src/main/java/com/study/springboot/controller/MyController.java,4\9
 Nspring0308/src/main/java/com/study/springboot/repository/NoticeRepository.java,4\a\4a475652bd2b7fb2dc82b24cd9530c4618c936f2
 p
 @spring0303/src/main/java/com/study/springboot/entity/Notice.java,2\6\261916dddf64449ef2521e61d7e3302d5fe87d7b
-p
-@spring0308/src/main/java/com/study/springboot/entity/Notice.java,4\d\4d441ed891ac953d5468edd9313264872c251956
 u
 Espring0308/src/main/java/com/study/springboot/ServletInitializer.java,b\1\b1ea37d70bc93049f8245d0212333defbda5ecca
 u
@@ -110,8 +108,6 @@ p
 @emJpa0308/src/main/java/com/study/springboot/entity/Product.java,e\0\e00cd794eaca25fdf69da8f66c38fb4d09a62ae2
 y
 IemJpa0308/src/main/java/com/study/springboot/controller/MyController.java,6\8\685dda8db48fe9e21729ba63d14bd38086cd64ff
-p
-@_Project/src/main/java/com/example/study/ProjectApplication.java,8\c\8c198c2265b7b1b813463346bbc47d0bc6074210
 |
 Lspring0307/src/main/java/com/study/spring0307/repository/CartRepository.java,a\5\a5807bb6fea2f3a14e78ca9249a6a144699e3663
 }
@@ -164,32 +160,18 @@ Ainstagram PJ/src/main/java/com/study/springboot/post/PostDao.java,8\d\8d7a029a
 Linstagram PJ/src/main/java/com/study/springboot/follow/FollowController.java,a\3\a3b08037a9f5305fe6bc955a29fbeae2ab36aa34
 z
 Jspring0307/src/main/java/com/study/spring0307/controller/MyController.java,e\1\e1e2aac61963a522e3c4316fb07c9456e1e89e4d
-p
-@spring0307/src/main/java/com/study/spring0307/entity/Person.java,3\6\3670a8dae546b695629785bfb8f65283126fdf6a
 G
 spring0307/build.gradle,1\2\12b805177c74568581c99dfd2372d86c16ee9011
-q
-Aspring0307/src/main/java/com/study/spring0307/entity/Product.java,a\a\aa4c30da5c16f60f3c8e363021f7ad4ce1d85b93
-u
-Einstagram PJ/src/main/java/com/study/springboot/post/PostService.java,2\3\23e11be63b3e59919637e7ccaf6d217c88f530c1
-q
-Ainstagram PJ/src/main/java/com/study/springboot/post/PostDto.java,2\6\26058782bb4d0bb23e762b78e130c35b186140fc
 n
 >spring0307/src/main/java/com/study/spring0307/entity/Cart.java,0\9\098f15a420f594287ae0fc58638614afbef084b5
 x
 Hinstagram PJ/src/main/java/com/study/springboot/like/LikeController.java,9\9\992520604b876dcc5df0d304c5aca2166c2db25e
-x
-Hinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgDto.java,a\1\a1cd5cb3d9cd8cff81c20ec8d6548dc71fdd7233
 u
 Einstagram PJ/src/main/java/com/study/springboot/follow/FollowDao.java,f\8\f890226b5409439e3be7558b34bf7e6960a066a5
-
-Oinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgRepository.java,3\d\3d0b5599f6d2f22370351e95c2bd8f2a45be54c2
 c
 3_jsp0314/src/main/webapp/WEB-INF/views/testPage.jsp,1\3\13b98fa2e08d365ebd8921f8da6b58ef69632c19
 x
 H_jsp0314/src/main/java/com/study/springboot/controller/MyController.java,7\9\79b40937a058ff5ef21e9284c4db004e0f31da0d
-i
-9_Project/src/main/java/com/example/study/entity/User.java,1\c\1c1d7e8eb6497415ac060b009bd27b9af6477251
 x
 HSangGyunNiiim/src/main/java/com/mall/march/marchproject/entity/Item.java,7\6\760059bc85577f6e6b9e0953a31c8d41a563b9dd
 x
@@ -225,13 +207,9 @@ b
 z
 J_mongo0315/src/main/java/com/study/springboot/controller/MyController.java,8\7\87530450833a31a544f388ac309b40669222f6bb
 {
-Kinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgEntity.java,b\7\b78f136b6ec169d0cada68ced153111f29f8d68c
-{
 Kinstagram PJ/src/main/java/com/study/springboot/comment/CommentService.java,6\3\63a270679df2b630e9d072fc87cd0b84a90aec9a
 z
 Jinstagram PJ/src/main/java/com/study/springboot/comment/SubCommentDto.java,9\5\95600b49e64be14514ef153c713c17e3c01744f2
-~
-Ninstagram PJ/src/main/java/com/study/springboot/comment/CommentController.java,9\0\90bc4902bf0f661a706be8666b9523c9753444f2
 |
 Linstagram PJ/src/test/java/com/study/springboot/InstaPjApplicationTests.java,4\c\4cfd0e4cdab926cb35749a285a0c5fe1203140a7
 C
@@ -268,31 +246,61 @@ I
 instagram PJ/build.gradle,4\e\4efffe183cb1f27b872f76a5e386cabaf898ed0c
 E
 _Project/build.gradle,7\8\788c084275681ac5303ab11bb9521dbf9af5c26e
-l
-<_Project/src/main/java/com/example/study/entity/UserImg.java,9\e\9ec79525b022a1a4e6bd734b5df28253102176b5
-t
-D_Project/src/main/java/com/example/study/service/UserImgService.java,c\c\cc1cb1cd9a8be76f95aedd41772d17e71623a70d
-z
-J_Project/src/main/java/com/example/study/repository/UserImgRepository.java,7\6\762ccd30ec5c6b1f8a07dc472b62da1a0cabebea
-w
-G_Project/src/main/java/com/example/study/repository/UserRepository.java,0\8\0864234b601b821f79f407de0c27e910b466e4be
-x
-H_Project/src/main/java/com/example/study/service/UserImgServiceImpl.java,1\a\1a8425747f2179f9c0e4633417bf84ee1ea89817
-w
-Ginstagram PJ/src/main/java/com/study/springboot/post/ImgController.java,a\7\a7d2980a4a2a01caf94e1469b7df29ef8e51e54a
 x
 Hinstagram PJ/src/main/java/com/study/springboot/post/PostController.java,7\d\7d7f57fe54999bd9ef84db80b8ec0a08138283ee
+b
+2instagram PJ/src/main/resources/static/js/modal.js,3\0\30b0c5bca811251ac126e12910801fdd2d9e0095
+{
+K_upload0317/src/main/java/com/study/springboot/controller/Mycontroller.java,5\7\5713b4cb72f964da3efeb8585269b7930503e24b
+b
+2_upload0317/src/main/java/com/study/alg/Test3.java,a\1\a1061787f0d56a7a381134f83964312d11e5606f
+t
+D_Project/src/main/java/com/example/study/service/UserImgService.java,c\c\cc1cb1cd9a8be76f95aedd41772d17e71623a70d
+{
+Kinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgEntity.java,b\7\b78f136b6ec169d0cada68ced153111f29f8d68c
+
+Oinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgRepository.java,3\d\3d0b5599f6d2f22370351e95c2bd8f2a45be54c2
+x
+Hinstagram PJ/src/main/java/com/study/springboot/post/img/PostImgDto.java,a\1\a1cd5cb3d9cd8cff81c20ec8d6548dc71fdd7233
+u
+Einstagram PJ/src/main/java/com/study/springboot/post/PostService.java,2\3\23e11be63b3e59919637e7ccaf6d217c88f530c1
+q
+Ainstagram PJ/src/main/java/com/study/springboot/post/PostDto.java,2\6\26058782bb4d0bb23e762b78e130c35b186140fc
+p
+@_Project/src/main/java/com/example/study/ProjectApplication.java,8\c\8c198c2265b7b1b813463346bbc47d0bc6074210
+p
+@spring0308/src/main/java/com/study/springboot/entity/Notice.java,4\d\4d441ed891ac953d5468edd9313264872c251956
+E
+spring0307/.gitignore,6\5\6521b016d03c0731dd3dac828beaeb8d8be3c458
+p
+@spring0307/src/main/java/com/study/spring0307/entity/Person.java,3\6\3670a8dae546b695629785bfb8f65283126fdf6a
+q
+Aspring0307/src/main/java/com/study/spring0307/entity/Product.java,a\a\aa4c30da5c16f60f3c8e363021f7ad4ce1d85b93
+w
+G_Project/src/main/java/com/example/study/repository/UserRepository.java,0\8\0864234b601b821f79f407de0c27e910b466e4be
+i
+9_Project/src/main/java/com/example/study/entity/User.java,1\c\1c1d7e8eb6497415ac060b009bd27b9af6477251
+l
+<_Project/src/main/java/com/example/study/entity/UserImg.java,9\e\9ec79525b022a1a4e6bd734b5df28253102176b5
+j
+:_Project/src/main/java/com/example/study/entity/Board.java,8\c\8c7107970842e8bb1f0d65b9cff81b3bd2acaad9
+~
+Ninstagram PJ/src/main/java/com/study/springboot/comment/CommentController.java,9\0\90bc4902bf0f661a706be8666b9523c9753444f2
+x
+H_Project/src/main/java/com/example/study/service/UserImgServiceImpl.java,1\a\1a8425747f2179f9c0e4633417bf84ee1ea89817
+z
+J_Project/src/main/java/com/example/study/repository/UserImgRepository.java,7\6\762ccd30ec5c6b1f8a07dc472b62da1a0cabebea
 u
 Einstagram PJ/src/main/java/com/study/springboot/member/MemberDto.java,2\6\26fabcbe5097e0d862baa43dae9e23677e421192
 u
-E_Project/src/main/java/com/example/study/controller/MyController.java,a\8\a82dc50a9881e4194163e14e58b742b04ec06ad2
-t
-Dinstagram PJ/src/main/java/com/study/springboot/post/ImgService.java,d\c\dce1b852e1cc55824cd18cf59dd21f5e99b0000c
+Einstagram PJ/src/main/java/com/study/springboot/member/MemberDao.java,4\e\4e1fd926e72658c8fb9c2a489f6250e3cfbfb4ae
 s
 Cinstagram PJ/src/main/java/com/study/springboot/HomeController.java,2\6\26e70b12c28dd7c3a5b1acb546966c2675552781
 u
-Einstagram PJ/src/main/java/com/study/springboot/member/MemberDao.java,4\e\4e1fd926e72658c8fb9c2a489f6250e3cfbfb4ae
+E_Project/src/main/java/com/example/study/controller/MyController.java,a\8\a82dc50a9881e4194163e14e58b742b04ec06ad2
+w
+Ginstagram PJ/src/main/java/com/study/springboot/post/ImgController.java,a\7\a7d2980a4a2a01caf94e1469b7df29ef8e51e54a
+t
+Dinstagram PJ/src/main/java/com/study/springboot/post/ImgService.java,d\c\dce1b852e1cc55824cd18cf59dd21f5e99b0000c
 |
 Linstagram PJ/src/main/java/com/study/springboot/member/MemberController.java,8\c\8c45c22d1b5461dcdc36839f3d4470ac877241fd
-b
-2instagram PJ/src/main/resources/static/js/modal.js,3\0\30b0c5bca811251ac126e12910801fdd2d9e0095

@@ -1,0 +1,14 @@
+
+l
+java:S22595"JA "NullPointerException" could be thrown; "originalName" is nullable here.(¿ַתיüÿÿÿÿ8סƒההן0
+o
+java:S2259."MA "NullPointerException" could be thrown; "getContentType()" can return null.(ה÷תÿÿÿÿ8סƒההן0
+X	java:S125)"<This block of commented-out lines of code should be removed.(דן‹ר8צƒההן0
+I
+java:S1125."'Remove the unnecessary boolean literal.(ה÷תÿÿÿÿ8רƒההן0
+\
+java:S1854w":Remove this useless assignment to local variable "result".(û«Ýררÿÿÿÿ8€„ההן0
+p
+java:S4042w"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(û«Ýררÿÿÿÿ8„ההן0
+k
+java:S4042z"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ַ¡…ך8„ההן0

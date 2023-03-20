@@ -9,6 +9,8 @@ import com.example.study.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -37,18 +39,6 @@ public class MyController {
         User user = (User) session.getAttribute("user");
         model.addAttribute("user",user);
         return "view/main";
-    }
-
-    //헤더 요청
-    @RequestMapping("/header")
-    public String header(HttpSession session, Model model) {
-        User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
-        String userImg = userImgServiceImpl.userImgSearch(userId);
-
-        model.addAttribute("user",user);
-        model.addAttribute("userImg", userImg);
-        return "fragments/header";
     }
 
     //로그인 처리
@@ -115,6 +105,17 @@ public class MyController {
         return "view/myAccount";
     }
 
+    //이미지 수정 적용
+    @GetMapping("myAccount.do")
+    public String toMyAccount(Model model, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        String userId = user.getUserId();
+        String userImg = userImgServiceImpl.userImgSearch(userId);
+        model.addAttribute("user", user);
+        model.addAttribute("userImg", userImg);
+        return "view/myAccount";
+    }
+
     //개인정보 수정
     @PostMapping("userUpdate.do")
     public String userUpdate(User user, HttpSession session) {
@@ -126,7 +127,10 @@ public class MyController {
 
     //프로필 이미지 수정페이지
     @GetMapping("/userImage")
-    public String userImage() {
+    public String userImage(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
+
         return "view/imageUpload";
     }
 
@@ -171,14 +175,32 @@ public class MyController {
         userImgServiceImpl.userImgDelete(userId);
     }
 
-    //프로필 이미지 불러오기
-//    @GetMapping("/images/userImg/{userImg}")
-//    public ResponseEntity<?> getProfileImg (String userId) {
-//        String userImg = userImgServiceImpl.userImgSearch(userId);
-//        String realPath = userImgDir + userImg;
-//        byte[] imageByteArray = realPath.getBytes();
-//        return new ResponseEntity<>(imageByteArray, HttpStatus.OK);
-//    }
+    //프로필 이미지 출력
+    @GetMapping("/profile/123")
+    @ResponseBody
+    public Resource viewProfileImg(HttpSession session) throws IOException{
+        System.out.println("????????프로필 컨트롤러 진입했나요??????????");
+        User user = (User) session.getAttribute("user");
+        String userId = user.getUserId();
+        String path = userImgServiceImpl.userImgSearch(userId);
+        UrlResource urlResource = new UrlResource("file:" + path);
+        System.out.println("urlResource >>> " + urlResource);
+        return urlResource;
+    }
 
+    //중고거래 게시판
+    @GetMapping("/TdBoard")
+    public String tdboard(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
+        return "view/TdBoard";
+    }
+
+    //물건 올리기
+    @GetMapping("/sellItem")
+    public String sellitem(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
+        return "view/sellItem"; }
 
 } // Class

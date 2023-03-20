@@ -123,13 +123,13 @@
           <div class="user-image">
             <div>
               <div th:if="${userImg != null}" class="userPro">
-                <img th:src="${userImg}" alt="유저 프로필" class="default-img" />
+                <img th:src="|/profile/123|" alt="유저 프로필" class="default-img" />
               </div>
               <div th:if="${userImg == null}" class="userPro">
                 <img src="images/images.png" alt="기본 프로필" class="default-img"/>
               </div>
               <div class="img-btn">
-                  <input type="button" value="이미지 수정" class="img-fixBtn">
+                  <input type="button" value="이미지 수정" class="img-fixBtn" onclick="imgFix()">
               </div>
             </div>
             <div class="submitBtn">
@@ -157,7 +157,7 @@
     </div>
   </div>
 </div>
-<div class="modal">
+<!--<div class="modal">
   <div class="post_form_container">
     <form class="post_form" id="upload_form">
       <div class="preview">
@@ -177,7 +177,7 @@
       </div>
     </form>
   </div>
-</div>
+</div>-->
 
 </body>
 
@@ -216,86 +216,33 @@
 
   }
 
-  $(function(){
-    $(".img-fixBtn").click(function(){
-      $(".modal").fadeIn();
-    });
+  //var fadeoutBody = document.querySelector(".content");
 
-    $(".submit_btn").click(function(){
-      $(".modal").fadeOut();
-    })
-  })
 
-  var fileInput  = document.querySelector("#id_photo");
-  button     = document.querySelector(".input-file-trigger"),
-          the_return = document.querySelector(".file-return");
+  // $(function(){
+  //   $(".img-fixBtn").click(function(){
+  //     //fadeoutBody.style.display = "block";
+  //     $(".modal").fadeIn();
+  //   });
+  //
+  //   $(".submit_btn").click(function(){
+  //     //fadeoutBody.style.display = "none";
+  //     $(".modal").fadeOut();
+  //   })
+  // })
 
-  // show image
-  fileInput.addEventListener('change', handleImage, false);
-  var canvas = document.getElementById('imageCanvas');
-  var ctx = canvas.getContext('2d');
-
-  function handleImage(e) {
-    var reader = new FileReader();
-    reader.onload = function(event) {
-      var img = new Image();
-      img.onload = function() {
-        canvas.width = 200;
-        canvas.height = 200;
-        ctx.drawImage(img,0,0,200,200);
-      };
-      img.src = event.target.result;
-    };
-    reader.readAsDataURL(e.target.files[0])
-  }
-
-  function refresh() {
-    location.href = "/myAccount";
-  }
-
-  //이미지 등록
-  function submitImg() {
-    var uploadForm = $('#upload_form')[0];
-    var formData = new FormData(uploadForm );
-    $.ajax({
-      type: 'post',
-      url: 'userImg.do',
-      data: formData,
-      contentType : false,
-      processData : false,
-      enctype: 'multipart/form-data',
-      cache: false,
-      success: function(data){
-        alert("이미지 수정완료");
-        refresh();
-        modal.closed();
-      },
-      error: function(err) {
-        alert("이미지 수정오류");
-        console.log(err);
-      }
-    })
+  function imgFix() {
+    var url = "/userImage";
+    var name = "popup test";
+    var option = "width = 500, height = 500, top = 100, left = 200, status=no"
+    window.open(url, name, option);
   }
 
 
-  //이미지 삭제
-  function deleteImg() {
-    $.ajax({
-      type: 'post',
-      url: 'userImgDel.do',
-      success: delImg,
-      error: function(err) {
-        alert("이미지 삭제오류");
-        console.log(err);
-      }
-    })
-  }
+  // function refresh() {
+  //   location.href = "myAccount.do";
+  // }
 
-  function delImg() {
-    // $('#imageCanvas').empty();
-    // $('#id_photo').empty();
-    refresh();
-  }
 
 
 

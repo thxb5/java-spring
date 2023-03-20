@@ -45,7 +45,7 @@ public class UserImgServiceImpl implements UserImgService {
             //저장할 새로운 파일 이름
             String newFileName = userId + "_" + nowDate + extension;
 
-            //해당 유저가 가진 프로필 이미지 파일 삭제
+            //해당 유저가 가진 프로필 이미지 파일 삭제.
             File dirFile = new File(userImgDir);
             String fileList[] = dirFile.list();
             for(int i = 0; i < fileList.length; i++) {

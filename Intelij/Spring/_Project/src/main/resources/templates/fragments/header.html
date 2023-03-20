@@ -155,7 +155,7 @@ body a {
                         <a class="link-secondary" id="logoImage" href="/"><img src="images/carrotLogo.png" alt="로고"></a>
                     </div>
                     <div class="btnList">
-                        <a>중고거래</a>
+                        <a href="/TdBoard">중고거래</a>
                     </div>
                     <div class="btnList">
                         <a>동네가게</a>
@@ -176,9 +176,6 @@ body a {
                     <div class="myBtn">
                         <div th:if="${user == null}" id="loginBtn">
                             <a id="login_btn">로그인</a>
-                        </div>
-                        <div th:if="${user != null}">
-                            <img th:src="|${userImg}|" alt="유저 프로필" class="user-img" />
                         </div>
                         <div th:if="${user != null}" id="logoutBtn" >
                             <a href="logout.do">로그아웃</a>
@@ -282,7 +279,6 @@ body a {
 
     //마이페이지 클릭시 로그인 확인
     function mypageCheck() {
-        console.log(user);
         if(user == null) {
             alert('먼저 로그인해주세요.')
             return false;
