@@ -1,18 +1,16 @@
 package com.example.study.controller;
 
+import com.example.study.entity.Board;
 import com.example.study.entity.User;
-import com.example.study.entity.UserImg;
 import com.example.study.repository.UserRepository;
-import com.example.study.service.UserImgService;
+import com.example.study.service.BoardImgServiceImpl;
+import com.example.study.service.BoardServiceImpl;
 import com.example.study.service.UserImgServiceImpl;
 import com.example.study.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.*;
-import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -29,15 +26,15 @@ public class MyController {
     private final UserServiceImpl userServiceImpl;
     private final UserRepository userRepository;
     private final UserImgServiceImpl userImgServiceImpl;
+    private final BoardServiceImpl boardServiceImpl;
+    private final BoardImgServiceImpl boardImgServiceImpl;
 
     @Value("${file.dir.userImg}")
     private String userImgDir;
 
     //메인 페이지
     @GetMapping("/")
-    public String main(HttpSession session, Model model){
-        User user = (User) session.getAttribute("user");
-        model.addAttribute("user",user);
+    public String main(){
         return "view/main";
     }
 
@@ -62,18 +59,13 @@ public class MyController {
 
     //회원가입 페이지
     @GetMapping("/join")
-    public String joinPage(HttpSession session, Model model) {
-        User user = (User) session.getAttribute("user");
-        model.addAttribute("user",user);
+    public String joinPage() {
         return "view/join";
     }
 
     //회원가입
     @PostMapping("/joinUser")
-        public String join(@RequestParam(value = "userNickname") String userNickname, @RequestParam(value = "userId") String userId, @RequestParam(value = "userPw") String userPw, @RequestParam(value = "userEmail") String userEmail, HttpSession session, Model model){
-            User user = (User) session.getAttribute("user");
-            model.addAttribute("user",user);
-
+        public String join(@RequestParam(value = "userNickname") String userNickname, @RequestParam(value = "userId") String userId, @RequestParam(value = "userPw") String userPw, @RequestParam(value = "userEmail") String userEmail){
             userRepository.save(User.builder().userId(userId).userPw(userPw).userNickname(userNickname).userEmail(userEmail).build());
         return "redirect:/";
     }
@@ -87,9 +79,7 @@ public class MyController {
 
     //마이페이지
     @GetMapping("/mypage")
-    public String mypage(HttpSession session, Model model) {
-        User user = (User) session.getAttribute("user");
-        model.addAttribute("user",user);
+    public String mypage() {
         return "view/mypage";
     }
 
@@ -111,7 +101,6 @@ public class MyController {
         User user = (User) session.getAttribute("user");
         String userId = user.getUserId();
         String userImg = userImgServiceImpl.userImgSearch(userId);
-        model.addAttribute("user", user);
         model.addAttribute("userImg", userImg);
         return "view/myAccount";
     }
@@ -127,11 +116,8 @@ public class MyController {
 
     //프로필 이미지 수정페이지
     @GetMapping("/userImage")
-    public String userImage(HttpSession session, Model model) {
-        User user = (User) session.getAttribute("user");
-        model.addAttribute("user",user);
-
-        return "view/imageUpload";
+    public String userImage() {
+        return "fragments/imageUpload";
     }
 
     //프로필 이미지 수정
@@ -145,24 +131,6 @@ public class MyController {
             String userImg = userImgServiceImpl.userImgSearch(userId);
             model.addAttribute("userImg", userImg);
         }
-
-
-
-//        String ogUserFileName = file.getOriginalFilename();
-//        String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/upload";
-//        User user = (User) session.getAttribute("user");
-//        String user_id = user.getUserId();
-//        String random = ""+Math.random();
-//
-//        String lastName = projectPath + "/" + random + file.getOriginalFilename();
-//        String imgPath = "./upload/";
-//        String realName = imgPath + random + ogUserFileName;
-//
-//        File dest = new File(lastName);
-//        System.out.println("dest = " + dest);
-//        file.transferTo(dest);
-//
-//        user.setUserProfimg();
         return data;
     }
 
@@ -179,28 +147,35 @@ public class MyController {
     @GetMapping("/profile/123")
     @ResponseBody
     public Resource viewProfileImg(HttpSession session) throws IOException{
-        System.out.println("????????프로필 컨트롤러 진입했나요??????????");
         User user = (User) session.getAttribute("user");
         String userId = user.getUserId();
         String path = userImgServiceImpl.userImgSearch(userId);
         UrlResource urlResource = new UrlResource("file:" + path);
-        System.out.println("urlResource >>> " + urlResource);
         return urlResource;
     }
 
     //중고거래 게시판
     @GetMapping("/TdBoard")
-    public String tdboard(HttpSession session, Model model) {
-        User user = (User) session.getAttribute("user");
-        model.addAttribute("user",user);
+    public String tdboard() {
         return "view/TdBoard";
     }
 
-    //물건 올리기
+    //물건 등록 페이지
     @GetMapping("/sellItem")
-    public String sellitem(HttpSession session, Model model) {
+    public String sellitem() {
+        return "view/sellItem";
+    }
+
+    //물건 등록
+    @PostMapping("/sellItem")
+    public String sellItem(Board board, MultipartFile[] imgs, HttpSession session) {
         User user = (User) session.getAttribute("user");
-        model.addAttribute("user",user);
-        return "view/sellItem"; }
+        String userId = user.getUserId();
+        boardServiceImpl.insertBd(board, userId);
+
+        //boardImgServiceImpl.insertBdImg(imgs, )
+
+        return "";
+    }
 
 } // Class

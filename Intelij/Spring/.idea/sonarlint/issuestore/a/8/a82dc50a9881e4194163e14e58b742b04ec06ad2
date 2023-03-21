@@ -1,29 +1,17 @@
 
 j
-java:S1192h"HDefine a constant instead of duplicating this literal "userImg" 3 times.(†¹Íøÿÿÿÿ8ß†Äóï0
+java:S1192^"HDefine a constant instead of duplicating this literal "userImg" 3 times.(†¹Íøÿÿÿÿ8ş¢»œğ0
 {
-java:S1488T"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8à†Äóï0
-{
-java:S4144n"YUpdate this method so that its implementation is not identical to "myAccount" on line 98.(²·ãùÿÿÿÿ8ë†Äóï0
+java:S1488L"^Immediately return this expression instead of assigning it to the temporary variable "result".(¨»Ş8ÿ¢»œğ0
+€
+java:S1488™"cImmediately return this expression instead of assigning it to the temporary variable "urlResource".(ü“‹o8ÿ¢»œğ0
+y
+java:S1845«"VRename method "sellItem" to prevent any misunderstanding/clash with method "sellitem".(åš¡êıÿÿÿÿ8µ£»œğ0
 \
-java:S24412":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8î†Äóï0
+java:S2441/":Make "User" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8Â£»œğ0
 b
-java:S4684y"@Replace this persistent entity with a simple POJO or DTO object.(è³ÒÒùÿÿÿÿ8ò†Äóï0
+java:S4684n"@Replace this persistent entity with a simple POJO or DTO object.(è³ÒÒùÿÿÿÿ8È£»œğ0
 \
-java:S2441|":Make "User" serializable or don't store it in the session.(ğòà¦úÿÿÿÿ8ó†Äóï0
-^	java:S125—"<This block of commented-out lines of code should be removed.(üõıùÿÿÿÿ8ö†Äóï0
-V	java:S106¶"9Replace this use of System.out or System.err by a logger.(Ã´êÎ8ø†Äóï0
-V	java:S106»"9Replace this use of System.out or System.err by a logger.(ØƒŸ8¥Ôóï0
-Z
-java:S1128"=Remove this unused import 'com.example.study.entity.UserImg'.(œâú”8ù†Äóï0
-b
-java:S1128"ERemove this unused import 'com.example.study.service.UserImgService'.(ßªò8ú†Äóï0
-m
-java:S1128
-"KRemove this unused import 'org.apache.tomcat.util.http.fileupload.IOUtils'.(Åü¢óûÿÿÿÿ8ú†Äóï0
-b
-java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ8ú†Äóï0
-f
-java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8ú†Äóï0
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ú†Äóï0
+java:S2441q":Make "User" serializable or don't store it in the session.(ğòà¦úÿÿÿÿ8É£»œğ0
+c
+java:S4684«"@Replace this persistent entity with a simple POJO or DTO object.(åš¡êıÿÿÿÿ8Ï£»œğ0

@@ -78,6 +78,7 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script th:inline="javascript">
+    var user = [[${session.user}]]
 
     //물건 판매시 로그인 확인
     function loginCheck() {

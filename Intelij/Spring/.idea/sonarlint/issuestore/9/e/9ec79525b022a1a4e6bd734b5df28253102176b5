@@ -1,4 +1,5 @@
 
-r	java:S116"VRename this field "origin_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şğ¤8¯Ëöúí0
-p	java:S116"TRename this field "save_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òĞøÃ8°Ëöúí0
-x	java:S116"WRename this field "userimg_path" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è¿•ÿÿÿÿÿ8¿ÜÉĞî0
+n	java:S116"RRename this field "u_imgId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏŠ°ì8­ šğ0
+t	java:S116"XRename this field "u_origin_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»–á8­ šğ0
+r	java:S116"VRename this field "u_save_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ßÚé8ÎÄ šğ0
+z	java:S116"YRename this field "u_userimg_path" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ïõşÿÿÿÿ8Îİ šğ0

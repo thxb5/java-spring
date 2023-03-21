@@ -89,6 +89,7 @@ body a {
     height: 40px;
     width: 250px;
     border: 1px solid #cdcbcb;
+    font-size: 20px;
 }
 
 .login_input > input:nth-child(2) {
@@ -174,13 +175,13 @@ body a {
                         <input type="button" value="검색">
                     </div>
                     <div class="myBtn">
-                        <div th:if="${user == null}" id="loginBtn">
+                        <div th:if="${session.user == null}" id="loginBtn">
                             <a id="login_btn">로그인</a>
                         </div>
-                        <div th:if="${user != null}" id="logoutBtn" >
+                        <div th:if="${session.user != null}" id="logoutBtn" >
                             <a href="logout.do">로그아웃</a>
                         </div>
-                        <div th:if="${user == null}">
+                        <div th:if="${session.user == null}">
                             <a href="/join">회원가입</a>
                         </div>
                         <div >
@@ -276,6 +277,8 @@ body a {
             }
         }
     }
+
+    var user = [[${session.user}]]
 
     //마이페이지 클릭시 로그인 확인
     function mypageCheck() {

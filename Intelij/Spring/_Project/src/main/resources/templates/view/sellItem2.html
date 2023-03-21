@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header"></head>
+<style>
+
+.bd-content {
+
+}
+
+.sellItem {
+    height: 90vh;
+    width: 86vw;
+    display: flex;
+    padding-left: 252px;
+    padding-top: 73px;
+}
+
+.myFont {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.content {
+width: 100%;
+height: 100%;
+}
+
+.sellForm {
+  border: 1px solid black;
+  width: 1000px;
+  height: 700px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+ul {
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+
+.bd-content>ul {
+    display: flex;
+}
+
+
+
+</style>
+<body>
+<div class="sellItem">
+    <div th:replace="fragments/aside2"></div>
+    <div class="content">
+        <div class="sellForm">
+            <form method="post" action="">
+                <div class="bd-title">
+                    <div class="myFont"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>내 물건 팔기</div>
+                </div>
+                <div class="bd-content">
+                    <ul>
+                        <li>카테고리</li>
+                        <li>
+                            <select name="bdList">
+                                <option value="1">디지털기기</option>
+                                <option value="2">생활가전</option>
+                                <option value="3">가구/인테리어</option>
+                                <option value="4">패션잡화</option>
+                                <option value="5">뷰티/미용</option>
+                            </select>
+                        </li>
+                        <li>가격</li>
+                        <li><input type="text" name="bdPrice" placeholder="가격을 입력해주세요"></li>
+                    </ul>
+                    <ul>
+                        <li>제목</li>
+                        <li><input type="text" name="bdTitle" placeholder="제목을 입력주세요"></li>
+                    </ul>
+                    <ul>
+                        <li>내용</li>
+                        <li><input type="text" name="bdContent" placeholder="내용을 입력해주세요"></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="post_form_container">
+                                <div class="post_form" id="upload_form">
+                                    <div class="preview">
+                                        <div class="upload">
+                                            <div class="post_btn">
+                                                <canvas id="imageCanvas"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="inputBtn">
+                                        <input type="file" multiple="multiple" name="imgs" id="id_photo" required="required">
+                                    </div>
+                                    <div class="inputBtn">
+                                        <input class="submit_btn" type="button" value="저장" onclick="submitImg()"/>
+                                        <input class="delete_btn" type="button" value="삭제" onclick="deleteImg()"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bd-btn">
+                    <input type="submit" value="등록">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script th:inline="javascript">
+
+    var fileInput  = document.querySelector("#id_photo");
+    button     = document.querySelector(".input-file-trigger"),
+        the_return = document.querySelector(".file-return");
+
+    // show image
+    fileInput.addEventListener('change', handleImage, false);
+    var canvas = document.getElementById('imageCanvas');
+    var ctx = canvas.getContext('2d');
+
+    function handleImage(e) {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            var img = new Image();
+            img.onload = function() {
+                canvas.width = 200;
+                canvas.height = 200;
+                ctx.drawImage(img,0,0,200,200);
+            };
+            img.src = event.target.result;
+        };
+        reader.readAsDataURL(e.target.files[0])
+    }
+
+
+</script>
+</html>

@@ -15,10 +15,10 @@ import javax.persistence.*;
 public class UserImg {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long imgId;
-    private String origin_name;
-    private String save_name;
-    private String userimg_path;
+    private Long u_imgId;
+    private String u_origin_name;
+    private String u_save_name;
+    private String u_userimg_path;
 
     @OneToOne
     @JsonIgnore
