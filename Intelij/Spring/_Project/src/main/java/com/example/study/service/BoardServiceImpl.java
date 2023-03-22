@@ -1,6 +1,7 @@
 package com.example.study.service;
 
 import com.example.study.entity.Board;
+import com.example.study.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +9,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
 
+    private final BoardRepository boardRepository;
 
     @Override
     public int insertBd(Board board, String userId) {
-        return 0;
+
+        boardRepository.boardInsert(board,userId);
+        int result = boardRepository.boardId();
+        return result;
     }
 }

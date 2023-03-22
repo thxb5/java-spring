@@ -42,6 +42,7 @@ public class MyController {
     @PostMapping("logincheck.do")
     @ResponseBody
     public User logincheck(@RequestParam("userId")String userId, @RequestParam("userPw")String userPw, HttpSession session) {
+        session.removeAttribute("user");
         User user = userServiceImpl.loginCheck2(userId,userPw);
         if(user!=null) {
             session.setAttribute("user", user);
@@ -160,6 +161,12 @@ public class MyController {
         return "view/TdBoard";
     }
 
+    //디지털기기 게시판
+    @GetMapping("/TdBoard1")
+    public String tdboard2() {
+        return "view/TdBoard1";
+    }
+
     //물건 등록 페이지
     @GetMapping("/sellItem")
     public String sellitem() {
@@ -168,14 +175,19 @@ public class MyController {
 
     //물건 등록
     @PostMapping("/sellItem")
-    public String sellItem(Board board, MultipartFile[] imgs, HttpSession session) {
+    public String sellItem(Board board, MultipartFile[] imgs, HttpSession session) throws IOException {
         User user = (User) session.getAttribute("user");
         String userId = user.getUserId();
-        boardServiceImpl.insertBd(board, userId);
+        int bdId = boardServiceImpl.insertBd(board, userId);
+//        int result = 0;
+//        if (bdId != 0) {
+            boardImgServiceImpl.insertBdImg(imgs, bdId);
+//        }
+//        if(result != 0) {
+//            System.out.println(">>>>>>>>>>>>>>>>>>>>>성공");
+//        }
 
-        //boardImgServiceImpl.insertBdImg(imgs, )
-
-        return "";
+        return "view/TdBoard";
     }
 
 } // Class
