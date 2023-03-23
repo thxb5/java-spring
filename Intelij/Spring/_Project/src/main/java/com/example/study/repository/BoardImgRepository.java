@@ -17,4 +17,6 @@ public interface BoardImgRepository extends JpaRepository<BoardImg, Long> {
     @Query(value = "insert into board_img(bd_origin_name, bd_save_name, bd_userimg_path, board_bd_no) values (:#{#boardImg.bd_origin_name}, :#{#boardImg.bd_save_name}, :#{#boardImg.bd_userimg_path}, :boardId)", nativeQuery = true)
     void boardImgInsert(BoardImg boardImg, int boardId);
 
+
+
 }

@@ -1,0 +1,9 @@
+
+~
+java:S14884"\Immediately return this expression instead of assigning it to the temporary variable "list".(´ïÇÑüÿÿÿÿ8âØ÷âğ0
+~
+java:S1488R"\Immediately return this expression instead of assigning it to the temporary variable "cart".(‰šáÌùÿÿÿÿ8âØ÷âğ0
+X	java:S125"<This block of commented-out lines of code should be removed.(²ğ‹Å8æ˜Œãğ0
+X	java:S125*"<This block of commented-out lines of code should be removed.(€ÃêÃ8ìØ÷âğ0
+U	java:S106="9Replace this use of System.out or System.err by a logger.(…Ÿµİ8íØ÷âğ0
+X	java:S125;"<This block of commented-out lines of code should be removed.(æÂ¬8É£©ãğ0

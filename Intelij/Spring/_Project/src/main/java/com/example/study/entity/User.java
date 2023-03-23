@@ -16,10 +16,4 @@ public class User {
     private String userPw;
     private String userNickname;
     private String userEmail;
-
-    @OneToOne(mappedBy = "user")
-    private UserImg userImg = new UserImg();
-
-    @OneToOne(mappedBy = "user")
-    private Board board = new Board();
 }

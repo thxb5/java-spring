@@ -18,9 +18,10 @@ public class BoardImg {
     private Long bd_imgId;
     private String bd_origin_name;
     private String bd_save_name;
+    @Id
     private String bd_userimg_path;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
     private Board board;
 

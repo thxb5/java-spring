@@ -23,6 +23,6 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 
     //디지털기기 게시글 찾기
     @Transactional
-    @Query(value = "select * from board where bd_list = 1", nativeQuery = true)
+    @Query(value = "SELECT a1.bd_title,a1.bd_price, a2.bd_userimg_path FROM board a1, board_img a2 WHERE a1.bd_list = 1 and a2.board_bd_no = a1.bd_no", nativeQuery = true)
     List<String> digitAll();
 }

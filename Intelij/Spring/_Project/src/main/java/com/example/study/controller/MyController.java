@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -163,7 +164,11 @@ public class MyController {
 
     //디지털기기 게시판
     @GetMapping("/TdBoard1")
-    public String tdboard2() {
+    public String tdboard2(Model model) {
+        List<String> list = boardServiceImpl.digitAll();
+        System.out.println("list = " + list);
+        System.out.println("list = " + list.get(0));
+        model.addAttribute("list", list);
         return "view/TdBoard1";
     }
 

@@ -5,6 +5,8 @@ import com.example.study.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
@@ -17,5 +19,13 @@ public class BoardServiceImpl implements BoardService {
         boardRepository.boardInsert(board,userId);
         int result = boardRepository.boardId();
         return result;
+    }
+
+    @Override
+    public List<String> digitAll() {
+
+        List<String> list = boardRepository.digitAll();
+
+        return list;
     }
 }

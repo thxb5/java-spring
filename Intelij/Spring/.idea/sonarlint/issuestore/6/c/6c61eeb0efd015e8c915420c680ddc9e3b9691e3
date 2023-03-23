@@ -1,0 +1,29 @@
+
+r
+java:S1488“"[Immediately return this expression instead of assigning it to the temporary variable "str".(Èö—
+r
+java:S1488š"[Immediately return this expression instead of assigning it to the temporary variable "str".(Áµ÷û
+s
+java:S1488¡"\Immediately return this expression instead of assigning it to the temporary variable "list".(Â¥ÁŞ
+w
+java:S1488¨"[Immediately return this expression instead of assigning it to the temporary variable "str".(À²üÁÿÿÿÿÿ
+w
+java:S1488¯"[Immediately return this expression instead of assigning it to the temporary variable "str".(·««„ıÿÿÿÿ
+s
+java:S1488¶"\Immediately return this expression instead of assigning it to the temporary variable "cart".(Í©ññ
+N	java:S1062"9Replace this use of System.out or System.err by a logger.(Ä®ê
+V	java:S125F"<This block of commented-out lines of code should be removed.(çÜÙşÿÿÿÿÿ
+V	java:S125X"<This block of commented-out lines of code should be removed.(Æ¨ÎÓÿÿÿÿÿ
+Q	java:S125^"<This block of commented-out lines of code should be removed.(õÅ…¾
+W
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.( áÖ
+R	java:S125‡"<This block of commented-out lines of code should be removed.(õÅ…¾
+O	java:S106½"9Replace this use of System.out or System.err by a logger.(²æ½Ü
+O	java:S106Å"9Replace this use of System.out or System.err by a logger.( ëÕŞ
+T	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(óº«şùÿÿÿÿ
+O	java:S106Ò"9Replace this use of System.out or System.err by a logger.(ŸÒâ™
+V
+java:S2441Ó":Make "Cart" serializable or don't store it in the session.(ûá•öûÿÿÿÿ
+O	java:S106Ü"9Replace this use of System.out or System.err by a logger.(ŸÒâ™
+V	java:S106æ"9Replace this use of System.out or System.err by a logger.(ŸÒâ™8†ßŞâğ0
+R	java:S125è"<This block of commented-out lines of code should be removed.(¢‘©©

@@ -24,7 +24,17 @@
 <div class="TdBoard">
     <div th:replace="fragments/aside2"></div>
     <div class="content">
+        <table>
+            <tr>
+                <th>디지털 기기</th>
+            </tr>
+            <tr>
+                <td th:each="aa : ${list}">
 
+                    <div th:text="${aa.(0)}"></div>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
 </body>

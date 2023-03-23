@@ -24,8 +24,9 @@ public class Board {
     @JsonIgnore
     private User user;
 
-    @OneToOne(mappedBy = "board")
-    private BoardImg boardImg = new BoardImg();
+    @OneToOne
+    private BoardImg boardImg;
+
 
 
 }
