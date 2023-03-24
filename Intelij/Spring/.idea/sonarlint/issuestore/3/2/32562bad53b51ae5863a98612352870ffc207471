@@ -3,3 +3,5 @@
 java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(ìõ§Âıÿÿÿÿ8µ´£Áğ0
 ~
 java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "list".(¾Ç…ûúÿÿÿÿ8êüóçğ0
+[
+java:S1854"9Remove this useless assignment to local variable "board".(èí³ùÿÿÿÿ8´§Ìñ0

@@ -14,7 +14,7 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     //게시글 작성
     @Transactional
     @Query(value = "insert into board(bd_list, bd_price, bd_title, bd_content, user_user_id) values (:#{#board.bdList}, :#{#board.bdPrice}, :#{#board.bdTitle}, :#{#board.bdContent}, :userId)", nativeQuery = true)
-    void boardInsert(Board board, String userId);
+    Board boardInsert(Board board, String userId);
 
     //게시글 아이디 찿기
     @Transactional

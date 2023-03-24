@@ -3,6 +3,7 @@ package com.example.study.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Getter
 @Setter
@@ -16,4 +17,7 @@ public class User {
     private String userPw;
     private String userNickname;
     private String userEmail;
+
+
+
 }

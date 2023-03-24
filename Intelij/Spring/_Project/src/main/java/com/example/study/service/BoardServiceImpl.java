@@ -16,7 +16,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public int insertBd(Board board, String userId) {
 
-        boardRepository.boardInsert(board,userId);
+        Board board = boardRepository.boardInsert(board,userId);
         int result = boardRepository.boardId();
         return result;
     }

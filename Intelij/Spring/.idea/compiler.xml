@@ -8,14 +8,16 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
-        <module name="bookshop.springboot.main" />
-        <module name="bookshop.springboot.test" />
+        <module name="_template0324.springboot.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="_jsp0310" target="11" />
       <module name="_jsp0310.main" target="11" />
       <module name="_jsp0310.test" target="11" />
+      <module name="_template0324" target="11" />
+      <module name="_template0324.main" target="11" />
+      <module name="_template0324.test" target="11" />
       <module name="com.study.upload0317" target="11" />
       <module name="com.study.upload0317.main" target="11" />
       <module name="com.study.upload0317.test" target="11" />

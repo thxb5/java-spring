@@ -20,13 +20,12 @@ public class Board {
     private String bdTitle;
     private String bdContent;
 
-    @OneToOne
+    @ManyToOne
     @JsonIgnore
     private User user;
 
     @OneToOne
+    @JoinColumn(name = "bd_userimg_path")
     private BoardImg boardImg;
-
-
 
 }
