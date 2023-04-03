@@ -16,16 +16,22 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public int insertBd(Board board, String userId) {
 
-        Board board = boardRepository.boardInsert(board,userId);
-        int result = boardRepository.boardId();
-        return result;
+        boardRepository.boardInsert(board,userId);
+        return 1;
     }
 
     @Override
-    public List<String> digitAll() {
+    public List<Board> digitall(int bdList) {
 
-        List<String> list = boardRepository.digitAll();
-
+        List<Board> list = boardRepository.digitAll(bdList);
+        System.out.println("list = " + list);
         return list;
     }
+
+    @Override
+    public Long boardId() {
+        Long result = boardRepository.boardId();
+        return result;
+    }
+
 }

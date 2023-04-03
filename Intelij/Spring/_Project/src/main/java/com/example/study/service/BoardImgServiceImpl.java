@@ -2,6 +2,7 @@ package com.example.study.service;
 
 import com.example.study.entity.BoardImg;
 import com.example.study.repository.BoardImgRepository;
+import com.example.study.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -12,12 +13,14 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class BoardImgServiceImpl implements BoardImgService {
 
     private final BoardImgRepository boardImgRepository;
+    private final BoardRepository boardRepository;
 
     @Value("${file.dir.bdImg}")
     private String bdImgDir;
@@ -25,7 +28,9 @@ public class BoardImgServiceImpl implements BoardImgService {
 
     @Override
     @ResponseBody
-    public int insertBdImg(MultipartFile[] imgs, int boardId) throws IOException {
+    public String insertBdImg(MultipartFile[] imgs, Long boardId) throws IOException {
+
+        String savePath = null;
 
         for (MultipartFile img : imgs) {
             // 기존 파일 이름
@@ -45,9 +50,11 @@ public class BoardImgServiceImpl implements BoardImgService {
             //저장할 새로운 파일 이름
             String newFileName = boardId + "_" + nowDate + extension;
 
+
+
             if (!img.isEmpty()) {
-                String savePath = bdImgDir + newFileName;
-                BoardImg imgg = BoardImg.builder().bd_origin_name(originalFileName).bd_save_name(newFileName).bd_userimg_path(savePath).build();
+                savePath = bdImgDir + newFileName;
+                BoardImg imgg = BoardImg.builder().bd_origin_name(originalFileName).bd_save_name(newFileName).bd_img_path(savePath).build();
 
                 boardImgRepository.boardImgInsert(imgg, boardId);
 
@@ -56,7 +63,13 @@ public class BoardImgServiceImpl implements BoardImgService {
                 img.transferTo(modifiedFileName);
             }
         }
-        return 1;
+        return savePath;
+    }
+
+    @Override
+    public List<BoardImg> boardImgList(Long bdNo) {
+        List<BoardImg> result = boardImgRepository.kategorieImg(bdNo);
+        return result;
     }
 
 }

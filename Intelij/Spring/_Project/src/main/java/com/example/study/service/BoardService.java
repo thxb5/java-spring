@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface BoardService {
     int insertBd(Board board, String userId);
-    List<String> digitAll();
+    List<Board> digitall(int bdList);
+    Long boardId();
 }

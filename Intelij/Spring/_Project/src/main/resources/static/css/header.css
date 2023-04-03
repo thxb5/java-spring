@@ -1,0 +1,135 @@
+body a {
+    text-decoration-line: none;
+}
+.main_header {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 71px;
+    border-bottom: 1px solid #a09b9b;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header_icon {
+    display: flex;
+    height: 56px;
+    align-items: center;
+    justify-content:space-between;
+    width: 70%;
+}
+
+.modal {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    display: none;
+    top: 21px;
+    left: 926px;
+}
+.modal_content{
+    height: 224px;
+}
+
+.modal_close{
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+
+}
+.myBtn {
+    display: flex;
+}
+
+#logoImage{
+    width: 114px;
+    height: 33px;
+}
+
+#logoImage > img {
+    width: 114px;
+    height: 33px;
+}
+
+#modal_closebtn {
+    height: 42px;
+    width: 70px;
+}
+
+.modal_login {
+    width: 80%;
+}
+
+.login_title {
+    margin-left: 10px;
+}
+
+.login_input {
+    height: 100px;
+    margin-left: 10px;
+}
+
+.login_input > input {
+    height: 40px;
+    width: 250px;
+    border: 1px solid #cdcbcb;
+    font-size: 20px;
+}
+
+.login_input > input:nth-child(2) {
+    border-top: none;
+}
+
+
+.myBtn {
+    display:flex;
+}
+
+.myBtn > div {
+    margin-left: 10px;
+}
+
+.login_submit {
+    padding-left: 10px;
+}
+
+.login_submit > input {
+    height: 87px;
+    width: 107px;
+    border: #df307f 1px solid;
+    background-color: #df307f;
+    color: white;
+    font-size: 20px;
+}
+
+.joinBtn {
+    padding-left: 10px;
+}
+
+.joinBtn > a {
+    width: 100px;
+    height: 36px;
+}
+
+.LG_btn {
+    display: flex;
+}
+
+.user-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+/* 버튼 css */
+
+.btnList {
+
+}

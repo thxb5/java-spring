@@ -29,9 +29,8 @@
                 <th>디지털 기기</th>
             </tr>
             <tr>
-                <td th:each="aa : ${list}">
-
-                    <div th:text="${aa.(0)}"></div>
+                <td th:each="imglist : ${imgList}">
+                    <img th:src="|/listImg/1/${imglist}|" alt="게시글 이미지" class="list-img" />
                 </td>
             </tr>
         </table>

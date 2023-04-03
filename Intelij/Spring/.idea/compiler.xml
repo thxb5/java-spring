@@ -8,25 +8,48 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
-        <module name="_template0324.springboot.main" />
+        <module name="com.example._Project.main~1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="_jsp0310" target="11" />
       <module name="_jsp0310.main" target="11" />
       <module name="_jsp0310.test" target="11" />
+      <module name="_last0329" target="11" />
+      <module name="_last0329.main" target="11" />
+      <module name="_last0329.test" target="11" />
+      <module name="_mongo0315.springboot.main~1" target="11" />
+      <module name="_querydsl0329" target="11" />
+      <module name="_querydsl0329.main" target="11" />
+      <module name="_querydsl0329.querydsl" target="11" />
+      <module name="_querydsl0329.test" target="11" />
       <module name="_template0324" target="11" />
       <module name="_template0324.main" target="11" />
+      <module name="_template0324.springboot.main~1" target="11" />
       <module name="_template0324.test" target="11" />
+      <module name="com.study.spring0303.main" target="11" />
+      <module name="com.study.springboot.main~1" target="11" />
       <module name="com.study.upload0317" target="11" />
-      <module name="com.study.upload0317.main" target="11" />
       <module name="com.study.upload0317.test" target="11" />
       <module name="jsp0314" target="11" />
       <module name="jsp0314.main" target="11" />
       <module name="jsp0314.test" target="11" />
+      <module name="last0328" target="11" />
+      <module name="last0328.main" target="11" />
+      <module name="last0328.test" target="11" />
+      <module name="last0329" target="11" />
+      <module name="last0329.main" target="11" />
+      <module name="last0329.test" target="11" />
+      <module name="spring0303" target="11" />
+      <module name="spring0303.test" target="11" />
       <module name="study" target="11" />
       <module name="study.main" target="11" />
       <module name="study.test" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="com.example.last0329.main" options="--add-modules java.sql" />
+    </option>
   </component>
 </project>

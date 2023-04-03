@@ -14,18 +14,21 @@ import javax.persistence.*;
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bdNo;
-    private int bdList;
-    private int bdPrice;
-    private String bdTitle;
-    private String bdContent;
+    private Long bd_no;
+    private int bd_list;
+    private int bd_price;
+    private String bd_title;
+    private String bd_content;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     @JsonIgnore
     private User user;
 
-    @OneToOne
-    @JoinColumn(name = "bd_userimg_path")
-    private BoardImg boardImg;
+    private BoardImg boardImg; //BoardImg의 참조를 보관
+
+    public void setBoardImg(BoardImg boardImg) {
+        this.boardImg = boardImg;
+    }
 
 }

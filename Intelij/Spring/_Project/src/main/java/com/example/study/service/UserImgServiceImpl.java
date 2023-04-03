@@ -58,7 +58,7 @@ public class UserImgServiceImpl implements UserImgService {
 
             if (!img.isEmpty()) {
                 String savePath = userImgDir + newFileName;
-                UserImg imgg = UserImg.builder().u_origin_name(originalFileName).u_save_name(newFileName).u_userimg_path(savePath).build();
+                UserImg imgg = UserImg.builder().u_origin_name(originalFileName).u_save_name(newFileName).u_img_path(savePath).build();
 
                 //유저 이미지 유무 확인
                 String imgCk = userImgRepository.userImgCheck(userId);

@@ -1,6 +1,7 @@
 package com.example.study.controller;
 
 import com.example.study.entity.Board;
+import com.example.study.entity.BoardImg;
 import com.example.study.entity.User;
 import com.example.study.repository.UserRepository;
 import com.example.study.service.BoardImgServiceImpl;
@@ -18,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -68,7 +70,7 @@ public class MyController {
     //회원가입
     @PostMapping("/joinUser")
         public String join(@RequestParam(value = "userNickname") String userNickname, @RequestParam(value = "userId") String userId, @RequestParam(value = "userPw") String userPw, @RequestParam(value = "userEmail") String userEmail){
-            userRepository.save(User.builder().userId(userId).userPw(userPw).userNickname(userNickname).userEmail(userEmail).build());
+            userRepository.save(User.builder().user_id(userId).user_pw(userPw).user_nickname(userNickname).user_email(userEmail).build());
         return "redirect:/";
     }
 
@@ -89,7 +91,7 @@ public class MyController {
     @GetMapping("/myAccount")
     public String myAccount(HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
+        String userId = user.getUser_id();
         String userImg = userImgServiceImpl.userImgSearch(userId);
 
         model.addAttribute("user",user);
@@ -101,7 +103,7 @@ public class MyController {
     @GetMapping("myAccount.do")
     public String toMyAccount(Model model, HttpSession session) {
         User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
+        String userId = user.getUser_id();
         String userImg = userImgServiceImpl.userImgSearch(userId);
         model.addAttribute("userImg", userImg);
         return "view/myAccount";
@@ -127,7 +129,7 @@ public class MyController {
     @ResponseBody
     public int imgUpload(HttpSession session, MultipartFile[] imgs,Model model) throws IOException {
         User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
+        String userId = user.getUser_id();
         int data = userImgServiceImpl.userImg(imgs, userId);
         if (data == 1)  {
             String userImg = userImgServiceImpl.userImgSearch(userId);
@@ -141,7 +143,7 @@ public class MyController {
     @ResponseBody
     public void imgDelete(HttpSession session) {
         User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
+        String userId = user.getUser_id();
         userImgServiceImpl.userImgDelete(userId);
     }
 
@@ -150,7 +152,7 @@ public class MyController {
     @ResponseBody
     public Resource viewProfileImg(HttpSession session) throws IOException{
         User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
+        String userId = user.getUser_id();
         String path = userImgServiceImpl.userImgSearch(userId);
         UrlResource urlResource = new UrlResource("file:" + path);
         return urlResource;
@@ -158,18 +160,36 @@ public class MyController {
 
     //중고거래 게시판
     @GetMapping("/TdBoard")
-    public String tdboard() {
+    public String tdBoardPage() {
         return "view/TdBoard";
     }
 
     //디지털기기 게시판
     @GetMapping("/TdBoard1")
-    public String tdboard2(Model model) {
-        List<String> list = boardServiceImpl.digitAll();
-        System.out.println("list = " + list);
-        System.out.println("list = " + list.get(0));
-        model.addAttribute("list", list);
+    public String tdBoard1(Model model) {
+        List<Board> digitList = boardServiceImpl.digitall(1);
+        System.out.println("digitList = " + digitList);
+        List<BoardImg> digitImgList = new ArrayList<>();
+        for (Board board : digitList) {
+            List<BoardImg> imgList = new ArrayList<>();
+            imgList = boardImgServiceImpl.boardImgList(board.getBd_no());
+            System.out.println("imgList = " + imgList);
+            System.out.println("board.getBd_no() = " + board.getBd_no());
+            if(!imgList.isEmpty()) {
+                digitImgList.add(imgList.get(0));
+            }
+        }
+        System.out.println("digitImgList = " + digitImgList);
+        model.addAttribute("imgList", digitImgList);
         return "view/TdBoard1";
+    }
+
+    //게시판 이미지 뿌리기
+    @GetMapping("/listImg/1/{imglist}")
+    @ResponseBody
+    public Resource viewListImg1(@PathVariable("imglist") String path) throws IOException{
+        UrlResource urlResource = new UrlResource("file:" + path);
+        return urlResource;
     }
 
     //물건 등록 페이지
@@ -182,16 +202,12 @@ public class MyController {
     @PostMapping("/sellItem")
     public String sellItem(Board board, MultipartFile[] imgs, HttpSession session) throws IOException {
         User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
-        int bdId = boardServiceImpl.insertBd(board, userId);
-//        int result = 0;
-//        if (bdId != 0) {
+        String userId = user.getUser_id();
+        int result = boardServiceImpl.insertBd(board, userId);
+        Long bdId = boardServiceImpl.boardId();
+        if(result == 1) {
             boardImgServiceImpl.insertBdImg(imgs, bdId);
-//        }
-//        if(result != 0) {
-//            System.out.println(">>>>>>>>>>>>>>>>>>>>>성공");
-//        }
-
+        }
         return "view/TdBoard";
     }
 

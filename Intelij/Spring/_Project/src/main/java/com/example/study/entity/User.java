@@ -13,11 +13,9 @@ import java.util.*;
 @Builder
 public class User {
     @Id
-    private String userId;
-    private String userPw;
-    private String userNickname;
-    private String userEmail;
-
-
+    private String user_id;
+    private String user_pw;
+    private String user_nickname;
+    private String user_email;
 
 }
