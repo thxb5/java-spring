@@ -3,5 +3,7 @@
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/_Project/build/generated/sources/annotationProcessor/java/main" libraries="{bootstrap, jquery}" />
     <file url="file://$PROJECT_DIR$/_Project/src/main" libraries="{bootstrap, jquery}" />
+    <file url="file://$PROJECT_DIR$/_solProject/build/generated/sources/annotationProcessor/java/main" libraries="{all, bootstrap-icons, jquery-3.4.1, sb-forms-latest}" />
+    <file url="file://$PROJECT_DIR$/_solProject/src/main" libraries="{all, bootstrap-icons, jquery-3.4.1, sb-forms-latest}" />
   </component>
 </project>
