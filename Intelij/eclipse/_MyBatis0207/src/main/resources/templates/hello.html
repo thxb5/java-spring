@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ul>
+	<th:block th:each="aa, ii : ${list}">
+	<li>[[${aa}]]---[[${ii.index}]]===[[${ii.count}]]</li>
+	</th:block>
+	</ul>
+	
+	<hr>
+	
+	<div th:each="aa : ${list}">
+	<h4 th:text="${aa}"></h4>
+	</div>
+	
+	<hr>
+	
+	<ul>
+	<th:block th:each="aa : ${list}">
+	<li>[[${aa}]]</li>
+	</th:block>
+	</ul>
+	
+	<hr>
+	
+	<ul th:each="aa : ${list}">
+	<h4>[[${aa}]]</h4>
+	</ul>
+	
+	<hr>
+	
+	<h1>[[${msg}]]</h1>
+	<h1 th:text="${msg}" ></h1>
+	
+	<hr>
+	
+	<h4>[[${list}]]</h4>
+	
+</body>
+</html>
